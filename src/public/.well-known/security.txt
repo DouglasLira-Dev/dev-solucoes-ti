@@ -1,0 +1,5 @@
+Contact: mailto:contato@assistenciatecnicasolucao.dev
+Contact: https://assistenciatecnicasolucao.dev/contato
+Expires: 2025-12-31T23:59:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://assistenciatecnicasolucao.dev/.well-known/security.txt
