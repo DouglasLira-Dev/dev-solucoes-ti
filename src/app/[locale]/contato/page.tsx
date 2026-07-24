@@ -18,10 +18,10 @@ export default function ContatoPage() {
               <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="text-white font-semibold">E-mail</h3>
               <a
-                href="mailto:contato@assistenciatecnicasolucao.dev"
+                href="mailto:assistenciatecnicasolucao.dev@gmail.com"
                 className="text-gray-400 hover:text-primary transition-colors text-sm"
               >
-                contato@assistenciatecnicasolucao.dev
+              assistenciatecnicasolucao.dev@gmail.com
               </a>
             </div>
 
@@ -29,7 +29,7 @@ export default function ContatoPage() {
               <MessageCircle className="w-8 h-8 text-[#25D366] mx-auto mb-3" />
               <h3 className="text-white font-semibold">WhatsApp</h3>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5581912345678"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors text-sm"

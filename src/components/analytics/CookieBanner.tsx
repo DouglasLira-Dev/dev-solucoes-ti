@@ -2,26 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { Shield, X, Check, AlertCircle } from "lucide-react";
+import { getCookieConsent, setCookieConsent } from "@/lib/cookie-consent";
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
+    const consent = getCookieConsent();
     if (!consent) {
       setIsVisible(true);
     }
   }, []);
 
   const acceptCookies = () => {
-    localStorage.setItem("cookie-consent", "accepted");
+    setCookieConsent('accepted');
     setIsVisible(false);
-    // Recarregar para ativar o GA
     window.location.reload();
   };
 
   const rejectCookies = () => {
-    localStorage.setItem("cookie-consent", "rejected");
+    setCookieConsent('rejected');
     setIsVisible(false);
   };
 

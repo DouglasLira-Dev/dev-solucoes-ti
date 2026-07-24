@@ -106,8 +106,8 @@ export default async function TermosPage({ params }: TermosPageProps) {
             </p>
             <div className="space-y-2">
               <p>
-                📧 <a href="mailto:contato@assistenciatecnicasolucao.dev" className="text-primary hover:text-primary-dark transition-colors">
-                  contato@assistenciatecnicasolucao.dev
+                📧 <a href="mailto:assistenciatecnicasolucao.dev@gmail.com" className="text-primary hover:text-primary-dark transition-colors">
+                  assistenciatecnicasolucao.dev@gmail.com
                 </a>
               </p>
             </div>

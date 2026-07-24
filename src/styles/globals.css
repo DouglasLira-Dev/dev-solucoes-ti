@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #0A0A0A;
@@ -16,9 +18,20 @@ body {
   color-scheme: dark;
 }
 
-/* Cores personalizadas */
 .bg-dark {
   background-color: #0A0A0A;
+}
+
+.bg-dark-card {
+  background-color: #111111;
+}
+
+.bg-dark-surface {
+  background-color: #1A1A1A;
+}
+
+.border-dark-border {
+  border-color: #2A2A2A;
 }
 
 .text-primary {
@@ -43,4 +56,53 @@ body {
 
 .hover\:bg-primary\/10:hover {
   background-color: rgba(0, 212, 255, 0.1);
+}
+
+.text-cyber-green {
+  color: #00FF41;
+}
+
+.text-cyber-purple {
+  color: #B44DFF;
+}
+
+.text-cyber-red {
+  color: #FF0044;
+}
+
+.bg-cyber-green\/10 {
+  background-color: rgba(0, 255, 65, 0.1);
+}
+
+.bg-cyber-purple\/10 {
+  background-color: rgba(180, 77, 255, 0.1);
+}
+
+.bg-cyber-red\/10 {
+  background-color: rgba(255, 0, 68, 0.1);
+}
+
+.border-cyber-green {
+  border-color: #00FF41;
+}
+
+.border-cyber-purple {
+  border-color: #B44DFF;
+}
+
+.border-cyber-red {
+  border-color: #FF0044;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

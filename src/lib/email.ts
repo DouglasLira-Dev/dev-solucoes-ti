@@ -2,6 +2,18 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Função de escape HTML
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 interface SendEmailParams {
   nome: string;
   email: string;
@@ -10,11 +22,16 @@ interface SendEmailParams {
 
 export async function sendContactEmail({ nome, email, mensagem }: SendEmailParams) {
   try {
+    // Sanitizar dados
+    const nomeSanitizado = escapeHtml(nome);
+    const emailSanitizado = escapeHtml(email);
+    const mensagemSanitizada = escapeHtml(mensagem);
+
     const { data, error } = await resend.emails.send({
-      from: "Contato DEV Soluções <contato@assistenciatecnicasolucao.dev>",
-      to: ["contato@assistenciatecnicasolucao.dev"],
-      subject: `Novo contato de ${nome}`,
-      replyTo: email,
+      from: "Contato DEV Soluções <assistenciatecnicasolucao.dev@gmail.com>",
+      to: ["assistenciatecnicasolucao.dev@gmail.com"],
+      subject: `Novo contato de ${nomeSanitizado}`,
+      reply_to: emailSanitizado,
       html: `
         <!DOCTYPE html>
         <html>
@@ -38,15 +55,15 @@ export async function sendContactEmail({ nome, email, mensagem }: SendEmailParam
               </div>
               <div class="field">
                 <span class="label">👤 Nome:</span>
-                <span class="value">${nome}</span>
+                <span class="value">${nomeSanitizado}</span>
               </div>
               <div class="field">
                 <span class="label">📧 E-mail:</span>
-                <span class="value">${email}</span>
+                <span class="value">${emailSanitizado}</span>
               </div>
               <div class="message-box">
                 <div style="color: #00D4FF; font-weight: bold; margin-bottom: 10px;">💬 Mensagem:</div>
-                <div style="color: #CCCCCC; white-space: pre-wrap;">${mensagem}</div>
+                <div style="color: #CCCCCC; white-space: pre-wrap;">${mensagemSanitizada}</div>
               </div>
               <div class="footer">
                 <p>DEV Soluções em TI - Suporte, Desenvolvimento e Cybersegurança</p>
@@ -59,11 +76,11 @@ export async function sendContactEmail({ nome, email, mensagem }: SendEmailParam
       text: `
         Novo Contato - DEV Soluções em TI
         
-        Nome: ${nome}
-        E-mail: ${email}
+        Nome: ${nomeSanitizado}
+        E-mail: ${emailSanitizado}
         
         Mensagem:
-        ${mensagem}
+        ${mensagemSanitizada}
         
         ---
         DEV Soluções em TI - Suporte, Desenvolvimento e Cybersegurança

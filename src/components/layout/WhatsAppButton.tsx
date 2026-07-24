@@ -9,8 +9,8 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({
-  phoneNumber = "5511999999999",
-  message = "Olá! Gostaria de mais informações sobre os serviços da DEV Soluções em TI.",
+  phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511999999999",
+  message = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE || "Olá! Gostaria de mais informações sobre os serviços da DEV Soluções em TI.",
 }: WhatsAppButtonProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

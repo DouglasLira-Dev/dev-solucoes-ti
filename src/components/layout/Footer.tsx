@@ -13,8 +13,8 @@ const quickLinks = [
 const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com/DouglasLira-Dev" },
   { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "Facebook", icon: Facebook, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/dev_solucao_ti" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61591904985195" },
 ];
 
 export function Footer() {

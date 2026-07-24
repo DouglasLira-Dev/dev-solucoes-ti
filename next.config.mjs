@@ -14,7 +14,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'"
+            value: "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://www.google-analytics.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'"
           },
           {
             key: 'X-Content-Type-Options',
@@ -55,7 +55,6 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
 
-  // Configuração MDX
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 }
 
