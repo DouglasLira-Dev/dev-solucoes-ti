@@ -1,49 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
 import { contatoSchema } from "@/lib/validation";
 import { sendContactEmail } from "@/lib/email";
-
-// Rate limiting simples (em memória)
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT = 5; // 5 requisições
-const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hora
-
-function getClientIp(request: NextRequest): string {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim();
-  }
-  return request.headers.get("x-real-ip") || "unknown";
-}
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimit.get(ip);
-
-  if (!record || now > record.resetAt) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return true;
-  }
-
-  if (record.count >= RATE_LIMIT) {
-    return false;
-  }
-
-  record.count++;
-  rateLimit.set(ip, record);
-  return true;
-}
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
   try {
-    // 1. Rate limiting
+    // 1. Rate limiting com Redis
     const ip = getClientIp(request);
-    if (!checkRateLimit(ip)) {
+    const rateLimitResult = await checkRateLimit(ip);
+
+    if (!rateLimitResult.success) {
+      const resetDate = new Date(rateLimitResult.reset);
+      const minutosRestantes = Math.ceil((rateLimitResult.reset - Date.now()) / 60000);
+      
       return NextResponse.json(
         { 
           success: false, 
-          message: "Muitas tentativas. Tente novamente em 1 hora." 
+          message: `Muitas tentativas. Tente novamente em ${minutosRestantes} minutos.`,
+          limit: rateLimitResult.limit,
+          remaining: rateLimitResult.remaining,
+          reset: resetDate.toISOString(),
         },
-        { status: 429 }
+        { 
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': String(rateLimitResult.limit),
+            'X-RateLimit-Remaining': String(rateLimitResult.remaining),
+            'X-RateLimit-Reset': String(rateLimitResult.reset),
+          }
+        }
       );
     }
 
@@ -91,9 +76,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: true, 
-        message: "Mensagem enviada com sucesso! Responderemos em breve." 
+        message: "Mensagem enviada com sucesso! Responderemos em breve.",
+        limit: rateLimitResult.limit,
+        remaining: rateLimitResult.remaining - 1,
       },
-      { status: 200 }
+      { 
+        status: 200,
+        headers: {
+          'X-RateLimit-Limit': String(rateLimitResult.limit),
+          'X-RateLimit-Remaining': String(rateLimitResult.remaining - 1),
+          'X-RateLimit-Reset': String(rateLimitResult.reset),
+        }
+      }
     );
 
   } catch (error) {

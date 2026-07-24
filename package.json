@@ -13,6 +13,8 @@
     "test:accessibility": "node scripts/accessibility-test.js"
   },
   "dependencies": {
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
     "@vercel/analytics": "^1.3.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.420.0",
