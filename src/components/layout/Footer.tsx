@@ -17,6 +17,8 @@ const socialLinks = [
   { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61591904985195" },
 ];
 
+const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "5511999999999";
+
 export function Footer() {
   return (
     <footer className="bg-dark-card border-t border-dark-border">
@@ -102,8 +104,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+5511999999999" className="hover:text-primary transition-colors">
-                  (11) 99999-9999
+                <a href={`tel:+${phoneNumber}`} className="hover:text-primary transition-colors">
+                  {(phoneNumber).replace(/(\d{2})(\d{2})(\d{5})(\d{4})/, '($1) $2 $3-$4')}
                 </a>
               </li>
               <li className="text-gray-400 text-sm mt-2">

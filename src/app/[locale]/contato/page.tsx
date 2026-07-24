@@ -25,6 +25,16 @@ export default function ContatoPage() {
               </a>
             </div>
 
+            <div className="flex items-center gap-3 text-gray-300">
+                <MessageCircle className="w-5 h-5 text-primary" />
+                <a href={process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/assistenciatecnica-dev"} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-primary transition-colors">
+                  Discord
+                </a>
+              </div>
+
             <div className="bg-dark-card border border-dark-border rounded-lg p-6 text-center hover:border-primary transition-colors">
               <MessageCircle className="w-8 h-8 text-[#25D366] mx-auto mb-3" />
               <h3 className="text-white font-semibold">WhatsApp</h3>

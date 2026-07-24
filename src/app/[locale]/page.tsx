@@ -1,4 +1,8 @@
+import { useTranslations } from "@/hooks/useTranslations";
+
 export default function HomePage() {
+  const t = useTranslations();
+
   return (
     <div className="min-h-screen bg-dark text-white">
       {/* Hero Section */}
@@ -19,7 +23,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Suporte Técnico, Desenvolvimento e Cybersegurança com excelência
+              {t.home.subtitle}
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -27,13 +31,13 @@ export default function HomePage() {
                 href="/servicos"
                 className="inline-block bg-primary text-dark px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
               >
-                Conheça Nossos Serviços
+                {t.home.cta_servicos}
               </a>
               <a
                 href="/projetos"
                 className="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors"
               >
-                Ver Projetos
+                {t.home.cta_projetos}
               </a>
             </div>
           </div>
@@ -44,7 +48,7 @@ export default function HomePage() {
       <section className="py-16 bg-dark-card">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Nossos <span className="text-primary">Pilares</span>
+            {t.home.pillars.title}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -52,30 +56,24 @@ export default function HomePage() {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">🖥️</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Suporte Técnico</h3>
-              <p className="text-gray-400">
-                Assistência remota e presencial para manter sua infraestrutura funcionando.
-              </p>
+              <h3 className="text-xl font-semibold text-white mb-2">{t.home.pillars.suporte.title}</h3>
+              <p className="text-gray-400">{t.home.pillars.suporte.description}</p>
             </div>
 
             <div className="bg-dark-surface border border-dark-border rounded-lg p-6 hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">💻</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Desenvolvimento</h3>
-              <p className="text-gray-400">
-                Soluções personalizadas em Java, Spring Boot, Python e muito mais.
-              </p>
+              <h3 className="text-xl font-semibold text-white mb-2">{t.home.pillars.desenvolvimento.title}</h3>
+              <p className="text-gray-400">{t.home.pillars.desenvolvimento.description}</p>
             </div>
 
             <div className="bg-dark-surface border border-dark-border rounded-lg p-6 hover:border-primary transition-colors">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">🔒</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Cybersegurança</h3>
-              <p className="text-gray-400">
-                Proteção proativa com abordagem ética e foco em segurança da informação.
-              </p>
+              <h3 className="text-xl font-semibold text-white mb-2">{t.home.pillars.cyberseguranca.title}</h3>
+              <p className="text-gray-400">{t.home.pillars.cyberseguranca.description}</p>
             </div>
           </div>
         </div>
