@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "home": "Início",
+    "sobre": "Sobre",
+    "servicos": "Serviços",
+    "projetos": "Projetos",
+    "ferramentas": "Ferramentas",
+    "blog": "Blog",
+    "contato": "Contato"
+  },
+  "home": {
+    "title": "DEV Soluções em TI",
+    "subtitle": "Suporte Técnico, Desenvolvimento e Cybersegurança com excelência",
+    "cta_servicos": "Conheça Nossos Serviços",
+    "cta_projetos": "Ver Projetos",
+    "pillars": {
+      "title": "Nossos Pilares",
+      "suporte": {
+        "title": "Suporte Técnico",
+        "description": "Assistência remota e presencial para manter sua infraestrutura funcionando."
+      },
+      "desenvolvimento": {
+        "title": "Desenvolvimento",
+        "description": "Soluções personalizadas em Java, Spring Boot, Python e muito mais."
+      },
+      "cyberseguranca": {
+        "title": "Cybersegurança",
+        "description": "Proteção proativa com abordagem ética e foco em segurança da informação."
+      }
+    }
+  },
+  "sobre": {
+    "title": "Sobre Nós",
+    "description": "A DEV Soluções em TI é uma empresa dedicada a oferecer soluções tecnológicas completas com foco em segurança, qualidade e inovação.",
+    "historia": {
+      "title": "📚 Nossa História",
+      "text": "Fundada com o propósito de unir excelência técnica e compromisso com a segurança, a DEV Soluções em TI nasceu da paixão por tecnologia e da visão de um futuro digital mais seguro."
+    },
+    "missao": {
+      "title": "🎯 Nossa Missão",
+      "text": "Oferecer serviços de TI com qualidade, ética e transparência, sempre priorizando a segurança e a satisfação dos nossos clientes."
+    }
+  },
+  "servicos": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções completas para atender suas necessidades tecnológicas",
+    "filtros": {
+      "categoria": "Categoria",
+      "modalidade": "Modalidade",
+      "todos": "Todas as categorias",
+      "limpar": "Limpar filtros",
+      "encontrados": "serviço(s) encontrado(s)",
+      "nenhum": "Nenhum serviço encontrado com os filtros selecionados."
+    },
+    "modalidades": {
+      "todas": "Todas",
+      "remoto": "🌐 Remoto",
+      "presencial": "📍 Presencial",
+      "hibrido": "🔄 Híbrido"
+    },
+    "destaque": "★ Destaque"
+  },
+  "projetos": {
+    "title": "Projetos",
+    "subtitle": "Conheça meus projetos no GitHub",
+    "ver_todos": "Ver todos",
+    "nenhum": "Nenhum projeto encontrado no GitHub",
+    "dica": "Adicione projetos com topics como 'cybersecurity' ou 'java'",
+    "cyberseguranca": "🔒 Cybersegurança",
+    "desenvolvimento": "💻 Desenvolvimento",
+    "aviso": "⚠️ Projetos de cybersegurança são realizados em ambientes controlados e autorizados",
+    "atualizacao": "Dados atualizados automaticamente via API do GitHub"
+  },
+  "ferramentas": {
+    "title": "Ferramentas",
+    "subtitle": "Conheça as ferramentas que utilizamos e as que estamos desenvolvendo",
+    "usando": "🛠️ Ferramentas em Uso",
+    "planejando": "🚀 Em Desenvolvimento",
+    "total": "ferramentas no total",
+    "em_uso": "em uso",
+    "em_desenvolvimento": "em desenvolvimento"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Dicas, tutoriais e novidades do mundo da tecnologia",
+    "tags": "Tags",
+    "nenhum": "📝 Nenhum post publicado ainda.",
+    "em_breve": "Em breve teremos conteúdo técnico aqui!",
+    "ler_mais": "Ler mais",
+    "voltar": "Voltar para o blog",
+    "publicado": "Publicado em"
+  },
+  "contato": {
+    "title": "Entre em Contato",
+    "subtitle": "Estamos prontos para ajudar você com suas necessidades tecnológicas",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "seguranca": "Segurança",
+    "seguranca_texto": "Suas informações estão protegidas",
+    "form": {
+      "title": "Envie sua Mensagem",
+      "nome": "Nome",
+      "email": "E-mail",
+      "mensagem": "Mensagem",
+      "placeholder_nome": "Seu nome completo",
+      "placeholder_email": "seu@email.com",
+      "placeholder_mensagem": "Como podemos ajudar você?",
+      "enviar": "Enviar Mensagem",
+      "enviando": "Enviando...",
+      "sucesso": "Mensagem enviada com sucesso! Responderemos em breve.",
+      "erro": "Erro ao enviar mensagem. Tente novamente.",
+      "erro_conexao": "Erro de conexão. Verifique sua internet e tente novamente.",
+      "max_caracteres": "Máximo de 1000 caracteres",
+      "seguro": "🔒 Sua mensagem é segura. Não compartilhamos seus dados."
+    }
+  },
+  "privacidade": {
+    "title": "Política de Privacidade",
+    "subtitle": "Política de Privacidade da DEV Soluções em TI - LGPD - Proteção de Dados",
+    "atualizacao": "Última atualização:",
+    "secoes": {
+      "dados": {
+        "title": "1. Dados Coletados",
+        "text": "A DEV Soluções em TI coleta os seguintes dados através do formulário de contato:",
+        "itens": ["Nome completo", "Endereço de e-mail", "Mensagem enviada"]
+      },
+      "cookies": {
+        "title": "2. Cookies e Analytics",
+        "text": "Utilizamos cookies para melhorar sua experiência. O Google Analytics é usado para entender como os visitantes interagem com nosso site.",
+        "gerenciar": "🔒 Você pode gerenciar suas preferências de cookies através do banner de consentimento."
+      },
+      "finalidade": {
+        "title": "3. Finalidade do Tratamento",
+        "itens": [
+          "Responder às mensagens enviadas através do formulário de contato",
+          "Melhorar nossos serviços com base em análises",
+          "Enviar informações solicitadas"
+        ]
+      },
+      "direitos": {
+        "title": "4. Direitos do Titular (LGPD)",
+        "text": "Você tem direito a:",
+        "itens": [
+          "Confirmar a existência de tratamento de seus dados",
+          "Acessar seus dados pessoais",
+          "Corrigir dados incompletos ou desatualizados",
+          "Solicitar a exclusão de seus dados",
+          "Revogar o consentimento a qualquer momento"
+        ]
+      },
+      "contato": {
+        "title": "5. Contato",
+        "text": "Para exercer seus direitos ou tirar dúvidas, entre em contato:"
+      }
+    },
+    "rodape": "🔒 Seus dados são protegidos com transparência e compromisso com a sua privacidade."
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "subtitle": "Política de Cookies da DEV Soluções em TI",
+    "atualizacao": "Última atualização:",
+    "secoes": {
+      "o_que_sao": {
+        "title": "O que são Cookies?",
+        "text": "Cookies são pequenos arquivos de texto que são armazenados no seu dispositivo quando você visita um site. Eles ajudam a melhorar sua experiência de navegação."
+      },
+      "quais_usamos": {
+        "title": "Quais Cookies Usamos?",
+        "tabela": {
+          "nome": "Nome",
+          "tipo": "Tipo",
+          "finalidade": "Finalidade",
+          "duracao": "Duração"
+        },
+        "cookies": [
+          {
+            "nome": "_ga",
+            "tipo": "Analytics",
+            "finalidade": "Google Analytics - Identificação de usuário",
+            "duracao": "2 anos"
+          },
+          {
+            "nome": "_gid",
+            "tipo": "Analytics",
+            "finalidade": "Google Analytics - Sessão do usuário",
+            "duracao": "24 horas"
+          },
+          {
+            "nome": "cookie-consent",
+            "tipo": "Necessário",
+            "finalidade": "Armazena preferência de cookies",
+            "duracao": "1 ano"
+          }
+        ]
+      },
+      "como_gerenciar": {
+        "title": "Como Gerenciar Cookies?",
+        "text": "Você pode gerenciar suas preferências de cookies através do banner de consentimento ou nas configurações do seu navegador.",
+        "aviso": "🔒 Não compartilhamos seus dados com terceiros sem seu consentimento explícito."
+      }
+    }
+  },
+  "footer": {
+    "brand": "DEV Soluções",
+    "brand_desc": "Suporte Técnico, Desenvolvimento e Cybersegurança com excelência.",
+    "links_rapidos": "Links Rápidos",
+    "servicos": "Serviços",
+    "contato": "Contato",
+    "direitos": "Todos os direitos reservados.",
+    "seguranca": "🔒 security.txt"
+  },
+  "whatsapp": {
+    "button": "Fale conosco"
+  },
+  "cookies_banner": {
+    "title": "🍪 Nós usamos cookies",
+    "text": "Utilizamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. Ao continuar, você concorda com nossa Política de Privacidade.",
+    "aceitar": "Aceitar todos",
+    "recusar": "Recusar",
+    "politica": "Política de Privacidade",
+    "cookies": "Política de Cookies"
+  },
+  "common": {
+    "carregando": "Carregando...",
+    "erro": "Ocorreu um erro. Tente novamente.",
+    "voltar": "Voltar"
+  }
+}

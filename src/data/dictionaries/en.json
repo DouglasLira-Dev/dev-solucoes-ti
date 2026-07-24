@@ -1,0 +1,228 @@
+{
+  "nav": {
+    "home": "Home",
+    "sobre": "About",
+    "servicos": "Services",
+    "projetos": "Projects",
+    "ferramentas": "Tools",
+    "blog": "Blog",
+    "contato": "Contact"
+  },
+  "home": {
+    "title": "DEV Solutions in IT",
+    "subtitle": "Technical Support, Development and Cybersecurity with excellence",
+    "cta_servicos": "Explore Our Services",
+    "cta_projetos": "View Projects",
+    "pillars": {
+      "title": "Our Pillars",
+      "suporte": {
+        "title": "Technical Support",
+        "description": "Remote and on-site assistance to keep your infrastructure running."
+      },
+      "desenvolvimento": {
+        "title": "Development",
+        "description": "Custom solutions in Java, Spring Boot, Python and much more."
+      },
+      "cyberseguranca": {
+        "title": "Cybersecurity",
+        "description": "Proactive protection with an ethical approach focused on information security."
+      }
+    }
+  },
+  "sobre": {
+    "title": "About Us",
+    "description": "DEV Solutions in IT is a company dedicated to offering complete technological solutions with a focus on security, quality and innovation.",
+    "historia": {
+      "title": "📚 Our History",
+      "text": "Founded with the purpose of uniting technical excellence and commitment to security, DEV Solutions in IT was born from a passion for technology and the vision of a safer digital future."
+    },
+    "missao": {
+      "title": "🎯 Our Mission",
+      "text": "To offer IT services with quality, ethics and transparency, always prioritizing security and customer satisfaction."
+    }
+  },
+  "servicos": {
+    "title": "Our Services",
+    "subtitle": "Complete solutions to meet your technological needs",
+    "filtros": {
+      "categoria": "Category",
+      "modalidade": "Modality",
+      "todos": "All categories",
+      "limpar": "Clear filters",
+      "encontrados": "service(s) found",
+      "nenhum": "No services found with the selected filters."
+    },
+    "modalidades": {
+      "todas": "All",
+      "remoto": "🌐 Remote",
+      "presencial": "📍 On-site",
+      "hibrido": "🔄 Hybrid"
+    },
+    "destaque": "★ Featured"
+  },
+  "projetos": {
+    "title": "Projects",
+    "subtitle": "Check out my projects on GitHub",
+    "ver_todos": "View all",
+    "nenhum": "No projects found on GitHub",
+    "dica": "Add projects with topics like 'cybersecurity' or 'java'",
+    "cyberseguranca": "🔒 Cybersecurity",
+    "desenvolvimento": "💻 Development",
+    "aviso": "⚠️ Cybersecurity projects are carried out in controlled and authorized environments",
+    "atualizacao": "Data automatically updated via GitHub API"
+  },
+  "ferramentas": {
+    "title": "Tools",
+    "subtitle": "Discover the tools we use and the ones we are developing",
+    "usando": "🛠️ Tools in Use",
+    "planejando": "🚀 In Development",
+    "total": "tools in total",
+    "em_uso": "in use",
+    "em_desenvolvimento": "in development"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tips, tutorials and news from the world of technology",
+    "tags": "Tags",
+    "nenhum": "📝 No posts published yet.",
+    "em_breve": "We'll have technical content here soon!",
+    "ler_mais": "Read more",
+    "voltar": "Back to blog",
+    "publicado": "Published on"
+  },
+  "contato": {
+    "title": "Get in Touch",
+    "subtitle": "We are ready to help you with your technology needs",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "seguranca": "Security",
+    "seguranca_texto": "Your information is protected",
+    "form": {
+      "title": "Send us a Message",
+      "nome": "Name",
+      "email": "Email",
+      "mensagem": "Message",
+      "placeholder_nome": "Your full name",
+      "placeholder_email": "your@email.com",
+      "placeholder_mensagem": "How can we help you?",
+      "enviar": "Send Message",
+      "enviando": "Sending...",
+      "sucesso": "Message sent successfully! We'll respond shortly.",
+      "erro": "Error sending message. Please try again.",
+      "erro_conexao": "Connection error. Check your internet and try again.",
+      "max_caracteres": "Maximum 1000 characters",
+      "seguro": "🔒 Your message is secure. We don't share your data."
+    }
+  },
+  "privacidade": {
+    "title": "Privacy Policy",
+    "subtitle": "DEV Solutions in IT Privacy Policy - LGPD - Data Protection",
+    "atualizacao": "Last updated:",
+    "secoes": {
+      "dados": {
+        "title": "1. Data Collected",
+        "text": "DEV Solutions in IT collects the following data through the contact form:",
+        "itens": ["Full name", "Email address", "Message sent"]
+      },
+      "cookies": {
+        "title": "2. Cookies and Analytics",
+        "text": "We use cookies to improve your experience. Google Analytics is used to understand how visitors interact with our website.",
+        "gerenciar": "🔒 You can manage your cookie preferences through the consent banner."
+      },
+      "finalidade": {
+        "title": "3. Purpose of Processing",
+        "itens": [
+          "Respond to messages sent through the contact form",
+          "Improve our services based on analytics",
+          "Send requested information"
+        ]
+      },
+      "direitos": {
+        "title": "4. Data Subject Rights (LGPD)",
+        "text": "You have the right to:",
+        "itens": [
+          "Confirm the existence of processing of your data",
+          "Access your personal data",
+          "Correct incomplete or outdated data",
+          "Request deletion of your data",
+          "Revoke consent at any time"
+        ]
+      },
+      "contato": {
+        "title": "5. Contact",
+        "text": "To exercise your rights or ask questions, contact us:"
+      }
+    },
+    "rodape": "🔒 Your data is protected with transparency and commitment to your privacy."
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "subtitle": "DEV Solutions in IT Cookie Policy",
+    "atualizacao": "Last updated:",
+    "secoes": {
+      "o_que_sao": {
+        "title": "What are Cookies?",
+        "text": "Cookies are small text files that are stored on your device when you visit a website. They help improve your browsing experience."
+      },
+      "quais_usamos": {
+        "title": "Which Cookies Do We Use?",
+        "tabela": {
+          "nome": "Name",
+          "tipo": "Type",
+          "finalidade": "Purpose",
+          "duracao": "Duration"
+        },
+        "cookies": [
+          {
+            "nome": "_ga",
+            "tipo": "Analytics",
+            "finalidade": "Google Analytics - User identification",
+            "duracao": "2 years"
+          },
+          {
+            "nome": "_gid",
+            "tipo": "Analytics",
+            "finalidade": "Google Analytics - User session",
+            "duracao": "24 hours"
+          },
+          {
+            "nome": "cookie-consent",
+            "tipo": "Necessary",
+            "finalidade": "Stores cookie preference",
+            "duracao": "1 year"
+          }
+        ]
+      },
+      "como_gerenciar": {
+        "title": "How to Manage Cookies?",
+        "text": "You can manage your cookie preferences through the consent banner or in your browser settings.",
+        "aviso": "🔒 We do not share your data with third parties without your explicit consent."
+      }
+    }
+  },
+  "footer": {
+    "brand": "DEV Solutions",
+    "brand_desc": "Technical Support, Development and Cybersecurity with excellence.",
+    "links_rapidos": "Quick Links",
+    "servicos": "Services",
+    "contato": "Contact",
+    "direitos": "All rights reserved.",
+    "seguranca": "🔒 security.txt"
+  },
+  "whatsapp": {
+    "button": "Talk to us"
+  },
+  "cookies_banner": {
+    "title": "🍪 We use cookies",
+    "text": "We use cookies to improve your experience, analyze traffic and personalize content. By continuing, you agree to our Privacy Policy.",
+    "aceitar": "Accept all",
+    "recusar": "Reject",
+    "politica": "Privacy Policy",
+    "cookies": "Cookie Policy"
+  },
+  "common": {
+    "carregando": "Loading...",
+    "erro": "An error occurred. Please try again.",
+    "voltar": "Back"
+  }
+}
