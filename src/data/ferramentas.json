@@ -1,0 +1,108 @@
+{
+  "ferramentas": [
+    {
+      "id": "anydesk",
+      "nome": "AnyDesk",
+      "descricao": "Acesso remoto rápido e seguro para suporte técnico",
+      "categoria": "suporte-remoto",
+      "status": "usando",
+      "icon": "🖥️"
+    },
+    {
+      "id": "wireshark",
+      "nome": "Wireshark",
+      "descricao": "Analisador de tráfego de rede para diagnóstico e segurança",
+      "categoria": "seguranca",
+      "status": "usando",
+      "icon": "🔍"
+    },
+    {
+      "id": "vmware",
+      "nome": "VMware Workstation",
+      "descricao": "Virtualização para testes, laboratórios e ambientes isolados",
+      "categoria": "virtualizacao",
+      "status": "usando",
+      "icon": "🖥️"
+    },
+    {
+      "id": "metasploit",
+      "nome": "Metasploit Framework",
+      "descricao": "Framework para testes de penetração e exploração de vulnerabilidades",
+      "categoria": "seguranca",
+      "status": "usando",
+      "icon": "🔓"
+    },
+    {
+      "id": "nmap",
+      "nome": "Nmap",
+      "descricao": "Scanner de rede para mapeamento e descoberta de serviços",
+      "categoria": "seguranca",
+      "status": "usando",
+      "icon": "📡"
+    },
+    {
+      "id": "burp-suite",
+      "nome": "Burp Suite",
+      "descricao": "Ferramenta para testes de segurança em aplicações web",
+      "categoria": "seguranca",
+      "status": "usando",
+      "icon": "🌐"
+    },
+    {
+      "id": "intellij",
+      "nome": "IntelliJ IDEA",
+      "descricao": "IDE para desenvolvimento Java, Spring Boot e outras linguagens",
+      "categoria": "desenvolvimento",
+      "status": "usando",
+      "icon": "💻"
+    },
+    {
+      "id": "vscode",
+      "nome": "Visual Studio Code",
+      "descricao": "Editor de código para desenvolvimento web e projetos diversos",
+      "categoria": "desenvolvimento",
+      "status": "usando",
+      "icon": "📝"
+    },
+    {
+      "id": "docker",
+      "nome": "Docker",
+      "descricao": "Containerização para desenvolvimento e implantação de aplicações",
+      "categoria": "devops",
+      "status": "usando",
+      "icon": "🐳"
+    },
+    {
+      "id": "postman",
+      "nome": "Postman",
+      "descricao": "Plataforma para desenvolvimento e testes de APIs",
+      "categoria": "desenvolvimento",
+      "status": "usando",
+      "icon": "📬"
+    },
+    {
+      "id": "scanner-vulnerabilidades",
+      "nome": "Scanner de Vulnerabilidades",
+      "descricao": "Ferramenta automatizada para análise e detecção de vulnerabilidades em sistemas",
+      "categoria": "seguranca",
+      "status": "planejando",
+      "icon": "🚀"
+    },
+    {
+      "id": "dashboard-monitoramento",
+      "nome": "Dashboard de Monitoramento",
+      "descricao": "Painel em tempo real para monitoramento de sistemas e servidores",
+      "categoria": "devops",
+      "status": "planejando",
+      "icon": "📊"
+    },
+    {
+      "id": "automacao-seguranca",
+      "nome": "Ferramenta de Automação de Segurança",
+      "descricao": "Sistema para automação de tarefas de segurança e resposta a incidentes",
+      "categoria": "seguranca",
+      "status": "planejando",
+      "icon": "🤖"
+    }
+  ]
+}

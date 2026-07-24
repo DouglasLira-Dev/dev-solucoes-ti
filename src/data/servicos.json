@@ -1,0 +1,178 @@
+{
+  "servicos": [
+    {
+      "id": "suporte-remoto",
+      "categoria": "suporte-tecnico",
+      "titulo": "Suporte Técnico Remoto",
+      "descricao": "Atendimento rápido e eficiente via acesso remoto para resolução de problemas técnicos.",
+      "modalidade": "remoto",
+      "preco": "Sob consulta",
+      "icon": "🖥️",
+      "destaque": true,
+      "features": [
+        "Acesso remoto seguro",
+        "Resolução ágil de problemas",
+        "Suporte para sistemas Windows, Linux e macOS",
+        "Atendimento personalizado"
+      ],
+      "cta": "Solicitar suporte"
+    },
+    {
+      "id": "suporte-presencial",
+      "categoria": "suporte-tecnico",
+      "titulo": "Suporte Técnico Presencial",
+      "descricao": "Atendimento no local para resolução de problemas em hardware, redes e infraestrutura.",
+      "modalidade": "presencial",
+      "preco": "Sob consulta",
+      "icon": "🔧",
+      "destaque": true,
+      "features": [
+        "Diagnóstico in loco",
+        "Manutenção de hardware",
+        "Configuração de equipamentos",
+        "Visita técnica especializada"
+      ],
+      "cta": "Agendar visita"
+    },
+    {
+      "id": "redes-perifericos",
+      "categoria": "redes",
+      "titulo": "Redes e Periféricos",
+      "descricao": "Instalação, configuração e manutenção de redes cabeadas, wi-fi e periféricos.",
+      "modalidade": "presencial",
+      "preco": "Sob consulta",
+      "icon": "🌐",
+      "destaque": false,
+      "features": [
+        "Configuração de roteadores e switches",
+        "Instalação de redes cabeadas",
+        "Configuração de wi-fi empresarial",
+        "Manutenção de impressoras e scanners"
+      ],
+      "cta": "Solicitar orçamento"
+    },
+    {
+      "id": "cyberseguranca",
+      "categoria": "cyberseguranca",
+      "titulo": "Cybersegurança",
+      "descricao": "Análise de vulnerabilidades, consultoria e implementação de boas práticas de segurança.",
+      "modalidade": "remoto",
+      "preco": "Sob consulta",
+      "icon": "🔒",
+      "destaque": true,
+      "features": [
+        "Análise de vulnerabilidades",
+        "Testes de penetração",
+        "Consultoria em segurança",
+        "Implementação de boas práticas"
+      ],
+      "cta": "Falar com especialista"
+    },
+    {
+      "id": "desenvolvimento-web",
+      "categoria": "desenvolvimento",
+      "titulo": "Desenvolvimento Web",
+      "descricao": "Criação de sites, aplicações web e sistemas com tecnologias modernas.",
+      "modalidade": "remoto",
+      "preco": "Sob consulta",
+      "icon": "💻",
+      "destaque": true,
+      "features": [
+        "Desenvolvimento com Next.js e React",
+        "APIs REST com Java Spring Boot",
+        "Sistemas com Python e Django",
+        "Integrações com APIs"
+      ],
+      "cta": "Solicitar proposta"
+    },
+    {
+      "id": "api-integracao",
+      "categoria": "desenvolvimento",
+      "titulo": "APIs e Integrações",
+      "descricao": "Desenvolvimento de APIs REST e integrações entre sistemas e serviços.",
+      "modalidade": "remoto",
+      "preco": "Sob consulta",
+      "icon": "⚡",
+      "destaque": false,
+      "features": [
+        "APIs REST com autenticação JWT",
+        "Integração com serviços externos",
+        "Microserviços",
+        "Documentação com Swagger"
+      ],
+      "cta": "Solicitar proposta"
+    },
+    {
+      "id": "pacotes-empresariais",
+      "categoria": "pacotes",
+      "titulo": "Pacotes Recorrentes para Empresas",
+      "descricao": "Planos de suporte e manutenção contínuos para empresas, com atendimento prioritário.",
+      "modalidade": "híbrido",
+      "preco": "A partir de R$ 500/mês",
+      "icon": "📦",
+      "destaque": false,
+      "features": [
+        "Suporte técnico dedicado",
+        "Monitoramento contínuo",
+        "Manutenções preventivas",
+        "Relatórios mensais"
+      ],
+      "cta": "Ver planos"
+    },
+    {
+      "id": "diagnostico",
+      "categoria": "diagnostico",
+      "titulo": "Diagnóstico Técnico",
+      "descricao": "Análise detalhada do problema com identificação de causas e soluções.",
+      "modalidade": "híbrido",
+      "preco": "R$ 50 (presencial) / R$ 30 (remoto)",
+      "icon": "🩺",
+      "destaque": false,
+      "features": [
+        "Análise detalhada do problema",
+        "Identificação de causas",
+        "Proposta de soluções",
+        "Valor descontado do serviço final"
+      ],
+      "cta": "Agendar diagnóstico"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "suporte-tecnico",
+      "nome": "Suporte Técnico",
+      "icon": "🖥️",
+      "descricao": "Atendimento remoto e presencial para resolver seus problemas técnicos."
+    },
+    {
+      "id": "redes",
+      "nome": "Redes e Periféricos",
+      "icon": "🌐",
+      "descricao": "Infraestrutura de rede e manutenção de periféricos."
+    },
+    {
+      "id": "cyberseguranca",
+      "nome": "Cybersegurança",
+      "icon": "🔒",
+      "descricao": "Proteção de dados e sistemas contra ameaças digitais."
+    },
+    {
+      "id": "desenvolvimento",
+      "nome": "Desenvolvimento",
+      "icon": "💻",
+      "descricao": "Soluções personalizadas em desenvolvimento de software."
+    },
+    {
+      "id": "pacotes",
+      "nome": "Pacotes Recorrentes",
+      "icon": "📦",
+      "descricao": "Planos de suporte contínuo para empresas."
+    },
+    {
+      "id": "diagnostico",
+      "nome": "Diagnóstico",
+      "icon": "🩺",
+      "descricao": "Análise técnica para identificar e resolver problemas."
+    }
+  ]
+}
