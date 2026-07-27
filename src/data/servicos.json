@@ -6,7 +6,7 @@
       "titulo": "Suporte Técnico Remoto",
       "descricao": "Atendimento rápido e eficiente via acesso remoto para resolução de problemas técnicos.",
       "modalidade": "remoto",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 30",
       "icon": "🖥️",
       "destaque": true,
       "features": [
@@ -14,6 +14,24 @@
         "Resolução ágil de problemas",
         "Suporte para sistemas Windows, Linux e macOS",
         "Atendimento personalizado"
+      ],
+      "itens": [
+        { "nome": "Diagnóstico técnico remoto", "preco": "R$ 30", "obs": "abatido se fechar o serviço" },
+        { "nome": "Formatação/reinstalação de sistema operacional", "preco": "R$ 70 – 100" },
+        { "nome": "Remoção de vírus e malware", "preco": "R$ 60 – 90" },
+        { "nome": "Otimização de desempenho", "preco": "R$ 50 – 80" },
+        { "nome": "Instalação/configuração de programas", "preco": "R$ 40 – 60" },
+        { "nome": "Configuração de e-mail", "preco": "R$ 40 – 60" },
+        { "nome": "Backup/recuperação de arquivos (disco saudável)", "preco": "R$ 50 – 80" },
+        { "nome": "Configuração de VPN", "preco": "R$ 50 – 70" },
+        { "nome": "Suporte a impressora em rede", "preco": "R$ 40 – 60" },
+        { "nome": "Consultoria/orientação técnica geral", "preco": "R$ 50/hora" },
+        { "nome": "Configuração de tablet/smartphone", "preco": "R$ 40 – 70" },
+        { "nome": "Transferência de dados entre dispositivos", "preco": "R$ 40 – 70" },
+        { "nome": "Configuração de contas em nuvem", "preco": "R$ 40 – 60" },
+        { "nome": "Treinamento em software/ferramentas", "preco": "R$ 50/hora" },
+        { "nome": "Configuração de home office", "preco": "R$ 60 – 100" },
+        { "nome": "Hora avulsa remota (serviço não listado)", "preco": "R$ 60/hora" }
       ],
       "cta": "Solicitar suporte"
     },
@@ -23,7 +41,7 @@
       "titulo": "Suporte Técnico Presencial",
       "descricao": "Atendimento no local para resolução de problemas em hardware, redes e infraestrutura.",
       "modalidade": "presencial",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 50 + deslocamento",
       "icon": "🔧",
       "destaque": true,
       "features": [
@@ -31,6 +49,16 @@
         "Manutenção de hardware",
         "Configuração de equipamentos",
         "Visita técnica especializada"
+      ],
+      "itens": [
+        { "nome": "Diagnóstico técnico presencial", "preco": "R$ 50", "obs": "abatido se fechar o serviço" },
+        { "nome": "Manutenção de hardware (limpeza, pasta térmica)", "preco": "R$ 80 – 120" },
+        { "nome": "Montagem/upgrade de PC", "preco": "R$ 100 – 180" },
+        { "nome": "Recuperação de dados (HD/SSD danificado)", "preco": "R$ 150 – 300+" },
+        { "nome": "Reparo de notebook (tela, teclado, bateria)", "preco": "R$ 120 – 250", "obs": "peça cobrada à parte" },
+        { "nome": "Instalação de sistema operacional presencial", "preco": "R$ 100 – 150" },
+        { "nome": "Hora avulsa presencial (serviço não listado)", "preco": "R$ 90 – 120/hora" },
+        { "nome": "Taxa de deslocamento", "preco": "conforme política definida" }
       ],
       "cta": "Agendar visita"
     },
@@ -40,7 +68,7 @@
       "titulo": "Redes e Periféricos",
       "descricao": "Instalação, configuração e manutenção de redes cabeadas, wi-fi e periféricos.",
       "modalidade": "presencial",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 40",
       "icon": "🌐",
       "destaque": false,
       "features": [
@@ -48,6 +76,13 @@
         "Instalação de redes cabeadas",
         "Configuração de wi-fi empresarial",
         "Manutenção de impressoras e scanners"
+      ],
+      "itens": [
+        { "nome": "Diagnóstico remoto de rede (lentidão, DNS, instabilidade)", "preco": "R$ 40 – 60" },
+        { "nome": "Configuração remota de roteador/Wi-Fi", "preco": "R$ 50 – 70" },
+        { "nome": "Instalação de rede local (cabeamento, roteadores)", "preco": "R$ 120 – 250" },
+        { "nome": "Configuração de câmeras/CFTV", "preco": "R$ 150 – 300" },
+        { "nome": "Configuração de rede corporativa/doméstica robusta", "preco": "R$ 150 – 350" }
       ],
       "cta": "Solicitar orçamento"
     },
@@ -57,7 +92,7 @@
       "titulo": "Cybersegurança",
       "descricao": "Análise de vulnerabilidades, consultoria e implementação de boas práticas de segurança.",
       "modalidade": "remoto",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 80",
       "icon": "🔒",
       "destaque": true,
       "features": [
@@ -65,6 +100,12 @@
         "Testes de penetração",
         "Consultoria em segurança",
         "Implementação de boas práticas"
+      ],
+      "itens": [
+        { "nome": "Auditoria básica de segurança digital", "preco": "R$ 80 – 150" },
+        { "nome": "Auditoria de segurança em sites/sistemas", "preco": "R$ 250 – 600", "obs": "por escopo do projeto" },
+        { "nome": "Projeto de pentest básico (ético, sob contrato)", "preco": "R$ 300 – 800+", "obs": "por escopo do projeto" },
+        { "nome": "Consultoria em boas práticas de segurança", "preco": "R$ 80/hora" }
       ],
       "cta": "Falar com especialista"
     },
@@ -74,7 +115,7 @@
       "titulo": "Desenvolvimento Web",
       "descricao": "Criação de sites, aplicações web e sistemas com tecnologias modernas.",
       "modalidade": "remoto",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 500",
       "icon": "💻",
       "destaque": true,
       "features": [
@@ -82,6 +123,11 @@
         "APIs REST com Java Spring Boot",
         "Sistemas com Python e Django",
         "Integrações com APIs"
+      ],
+      "itens": [
+        { "nome": "Landing page simples", "preco": "R$ 500 – 1.200" },
+        { "nome": "Site institucional (até 5 páginas)", "preco": "R$ 1.200 – 3.000" },
+        { "nome": "Manutenção mensal de site", "preco": "R$ 80 – 200/mês" }
       ],
       "cta": "Solicitar proposta"
     },
@@ -91,7 +137,7 @@
       "titulo": "APIs e Integrações",
       "descricao": "Desenvolvimento de APIs REST e integrações entre sistemas e serviços.",
       "modalidade": "remoto",
-      "preco": "Sob consulta",
+      "preco": "A partir de R$ 200",
       "icon": "⚡",
       "destaque": false,
       "features": [
@@ -99,6 +145,10 @@
         "Integração com serviços externos",
         "Microserviços",
         "Documentação com Swagger"
+      ],
+      "itens": [
+        { "nome": "Automação/script sob medida", "preco": "R$ 150 – 500", "obs": "por complexidade" },
+        { "nome": "API/integração sob medida", "preco": "R$ 200 – 700", "obs": "por escopo do projeto" }
       ],
       "cta": "Solicitar proposta"
     },
@@ -117,6 +167,9 @@
         "Manutenções preventivas",
         "Relatórios mensais"
       ],
+      "itens": [
+        { "nome": "Pacote básico (suporte remoto ilimitado + prioridade)", "preco": "a partir de R$ 500/mês" }
+      ],
       "cta": "Ver planos"
     },
     {
@@ -133,6 +186,10 @@
         "Identificação de causas",
         "Proposta de soluções",
         "Valor descontado do serviço final"
+      ],
+      "itens": [
+        { "nome": "Diagnóstico presencial", "preco": "R$ 50" },
+        { "nome": "Diagnóstico remoto", "preco": "R$ 30" }
       ],
       "cta": "Agendar diagnóstico"
     }

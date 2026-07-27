@@ -8,7 +8,13 @@ export const metadata = seoMetadata({
   url: '/servicos',
 });
 
-export default function ServicosPage() {
+interface ServicosPageProps {
+  params: {
+    locale: string;
+  };
+}
+
+export default function ServicosPage({ params }: ServicosPageProps) {
   const servicos = getAllServicos();
   const categorias = getAllCategorias();
 
@@ -22,7 +28,11 @@ export default function ServicosPage() {
           Soluções completas para atender suas necessidades tecnológicas
         </p>
 
-        <ServicosClient servicos={servicos} categorias={categorias} />
+        <ServicosClient
+          servicos={servicos}
+          categorias={categorias}
+          locale={params.locale}
+        />
       </div>
     </div>
   );

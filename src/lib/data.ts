@@ -1,6 +1,12 @@
 import servicosData from '@/data/servicos.json';
 import ferramentasData from '@/data/ferramentas.json';
 
+export interface ItemServico {
+  nome: string;
+  preco: string;
+  obs?: string;
+}
+
 export interface Servico {
   id: string;
   categoria: string;
@@ -11,6 +17,7 @@ export interface Servico {
   icon: string;
   destaque: boolean;
   features: string[];
+  itens?: ItemServico[];
   cta: string;
 }
 

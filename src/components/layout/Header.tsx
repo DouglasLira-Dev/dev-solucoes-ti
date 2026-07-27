@@ -72,13 +72,13 @@ export function Header() {
                 aria-label="Switch language"
               >
                 <Globe className="w-5 h-5" />
-                <span className="text-sm uppercase hidden sm:inline">
+                <span className="text-sm uppercase">
                   {currentLocale}
                 </span>
               </button>
 
               {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-24 bg-dark-card border border-dark-border rounded-lg shadow-lg py-1">
+                <div className="absolute right-0 mt-2 w-24 bg-dark-card border border-dark-border rounded-lg shadow-lg py-1 z-[60]">
                   <button
                     onClick={() => switchLanguage("pt")}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-dark-surface hover:text-primary transition-colors"

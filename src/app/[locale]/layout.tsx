@@ -14,8 +14,10 @@ export const metadata = generateMetadata({
 
 export default function LocaleLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID || "";
 
@@ -26,7 +28,7 @@ export default function LocaleLayout({
       <main className="pt-16 min-h-screen">
         {children}
       </main>
-      <Footer />
+      <Footer locale={params.locale} />
       <WhatsAppButton />
       <CookieBanner />
     </TranslationsProvider>

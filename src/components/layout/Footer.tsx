@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Github, Linkedin, Instagram, Facebook, Mail, Phone } from "lucide-react";
 
+interface FooterProps {
+  locale: string;
+}
+
 const quickLinks = [
   { name: "Sobre", href: "/sobre" },
   { name: "Serviços", href: "/servicos" },
@@ -8,6 +12,13 @@ const quickLinks = [
   { name: "Blog", href: "/blog" },
   { name: "Contato", href: "/contato" },
   { name: "Política de Privacidade", href: "/privacidade" },
+];
+
+const serviceLinks = [
+  { name: "Suporte Técnico", href: "/servicos/suporte-remoto" },
+  { name: "Redes e Periféricos", href: "/servicos/redes-perifericos" },
+  { name: "Cybersegurança", href: "/servicos/cyberseguranca" },
+  { name: "Desenvolvimento", href: "/servicos/desenvolvimento-web" },
 ];
 
 const socialLinks = [
@@ -19,7 +30,7 @@ const socialLinks = [
 
 const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "5511999999999";
 
-export function Footer() {
+export function Footer({ locale }: FooterProps) {
   return (
     <footer className="bg-dark-card border-t border-dark-border">
       <div className="container mx-auto px-4 py-12">
@@ -55,7 +66,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
+                    href={`/${locale}${link.href}`}
                     className="text-gray-400 hover:text-primary transition-colors text-sm"
                   >
                     {link.name}
@@ -69,26 +80,16 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Serviços</h4>
             <ul className="space-y-2">
-              <li>
-                <Link href="/servicos" className="text-gray-400 hover:text-primary transition-colors text-sm">
-                  Suporte Técnico
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicos" className="text-gray-400 hover:text-primary transition-colors text-sm">
-                  Redes e Periféricos
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicos" className="text-gray-400 hover:text-primary transition-colors text-sm">
-                  Cybersegurança
-                </Link>
-              </li>
-              <li>
-                <Link href="/servicos" className="text-gray-400 hover:text-primary transition-colors text-sm">
-                  Desenvolvimento
-                </Link>
-              </li>
+              {serviceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={`/${locale}${link.href}`}
+                    className="text-gray-400 hover:text-primary transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -98,8 +99,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:contato@assistenciatecnicasolucao.dev" className="hover:text-primary transition-colors">
-                  contato@assistenciatecnicasolucao.dev
+                <a href="mailto:assistenciatecnicasolucao.dev@gmail.com" className="hover:text-primary transition-colors">
+                  assistenciatecnicasolucao.dev@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
@@ -121,12 +122,12 @@ export function Footer() {
             © {new Date().getFullYear()} DEV Soluções em TI. Todos os direitos reservados.
           </p>
           <div className="flex gap-4 text-sm">
-            <Link href="/privacidade" className="text-gray-500 hover:text-primary transition-colors">
+            <Link href={`/${locale}/privacidade`} className="text-gray-500 hover:text-primary transition-colors">
               Política de Privacidade
             </Link>
             <span className="text-gray-600">|</span>
             <Link href="/.well-known/security.txt" className="text-gray-500 hover:text-primary transition-colors">
-              🔒 security.txt
+              🔒 security
             </Link>
           </div>
         </div>

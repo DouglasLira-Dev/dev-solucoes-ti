@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Servico, Categoria } from '@/lib/data';
 
 interface ServicosClientProps {
   servicos: Servico[];
   categorias: Categoria[];
+  locale: string;
 }
 
-export function ServicosClient({ servicos, categorias }: ServicosClientProps) {
+export function ServicosClient({ servicos, categorias, locale }: ServicosClientProps) {
   const [categoriaFiltro, setCategoriaFiltro] = useState<string>('todos');
   const [modalidadeFiltro, setModalidadeFiltro] = useState<string>('todas');
 
@@ -140,12 +142,14 @@ export function ServicosClient({ servicos, categorias }: ServicosClientProps) {
                     {feature}
                   </li>
                 ))}
-                {servico.features.length > 3 && (
-                  <li className="text-gray-500 text-sm">
-                    +{servico.features.length - 3} outras
-                  </li>
-                )}
               </ul>
+
+              <Link
+                href={`/${locale}/servicos/${servico.id}`}
+                className="block w-full text-center border border-primary text-primary font-semibold py-2 rounded-lg hover:bg-primary/10 transition-colors mb-2"
+              >
+                Ver detalhes e preços
+              </Link>
 
               <a
                 href="/contato"
