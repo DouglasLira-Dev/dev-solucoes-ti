@@ -39,6 +39,11 @@
     "missao": {
       "title": "🎯 Our Mission",
       "text": "To offer IT services with quality, ethics and transparency, always prioritizing security and customer satisfaction."
+    },
+    "depoimentos": {
+      "title": "⭐ Testimonials",
+      "em_breve": "Real client testimonials coming soon!",
+      "descricao": "Follow what our clients are saying about our services."
     }
   },
   "servicos": {

@@ -1,12 +1,20 @@
 import { getAllFerramentas, getFerramentasByStatus } from '@/lib/data';
 import { generateMetadata as seoMetadata } from '@/lib/seo';
 import { FerramentasClient } from './FerramentasClient';
+import { getDictionary } from '@/lib/i18n';
 
-export const metadata = seoMetadata({
-  title: 'Ferramentas',
-  description: 'Ferramentas usadas no dia a dia e em desenvolvimento pela DEV Soluções em TI',
-  url: '/ferramentas',
-});
+interface FerramentasPageProps {
+  params: { locale: string };
+}
+
+export async function generateMetadata({ params }: FerramentasPageProps) {
+  const t = getDictionary(params.locale);
+  return seoMetadata({
+    title: t.ferramentas.title,
+    description: t.ferramentas.subtitle,
+    url: '/ferramentas',
+  });
+}
 
 export default function FerramentasPage() {
   const todasFerramentas = getAllFerramentas();

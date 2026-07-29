@@ -1,11 +1,19 @@
 import { generateMetadata as seoMetadata } from "@/lib/seo";
+import { getDictionary } from "@/lib/i18n";
 import { SobreClient } from "./SobreClient";
 
-export const metadata = seoMetadata({
-  title: "Sobre",
-  description: "Conheça a história da DEV Soluções em TI",
-  url: "/sobre",
-});
+interface SobrePageProps {
+  params: { locale: string };
+}
+
+export async function generateMetadata({ params }: SobrePageProps) {
+  const t = getDictionary(params.locale);
+  return seoMetadata({
+    title: t.sobre.title,
+    description: t.sobre.description,
+    url: "/sobre",
+  });
+}
 
 export default function SobrePage() {
   return <SobreClient />;

@@ -39,6 +39,11 @@
     "missao": {
       "title": "🎯 Nossa Missão",
       "text": "Oferecer serviços de TI com qualidade, ética e transparência, sempre priorizando a segurança e a satisfação dos nossos clientes."
+    },
+    "depoimentos": {
+      "title": "⭐ Depoimentos",
+      "em_breve": "Em breve, depoimentos de clientes reais!",
+      "descricao": "Acompanhe o que nossos clientes estão dizendo sobre nossos serviços."
     }
   },
   "servicos": {

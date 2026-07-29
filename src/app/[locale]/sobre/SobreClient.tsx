@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "@/components/i18n/TranslationsProvider";
+import { DepoimentosSection } from "@/components/sections/DepoimentosSection";
 
 export function SobreClient() {
   const t = useTranslations();
@@ -11,8 +12,7 @@ export function SobreClient() {
         <h1 className="text-4xl font-bold text-primary mb-8">{t.sobre.title}</h1>
         <div className="max-w-3xl">
           <p className="text-gray-300 text-lg mb-6">
-            A <span className="text-primary">DEV Soluções em TI</span> é uma empresa dedicada a oferecer 
-            soluções tecnológicas completas com foco em segurança, qualidade e inovação.
+            {t.sobre.description}
           </p>
           
           <div className="bg-dark-card border border-dark-border rounded-lg p-6 mb-6">
@@ -31,10 +31,8 @@ export function SobreClient() {
 
           {/* Depoimentos - Futuro */}
           <div className="mt-12">
-            <h2 className="text-2xl font-semibold text-white mb-6">⭐ Depoimentos</h2>
-            <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center">
-              <p className="text-gray-400">Em breve, depoimentos de clientes reais!</p>
-            </div>
+              <h2 className="text-2xl font-semibold text-white mb-6">{t.sobre.depoimentos.title}</h2>
+              <DepoimentosSection />
           </div>
         </div>
       </div>

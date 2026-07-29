@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "@/components/i18n/TranslationsProvider";
 
 interface Depoimento {
   id: string;
@@ -10,6 +11,8 @@ interface Depoimento {
   data: string;
   avatar?: string;
 }
+
+const t = useTranslations();
 
 const depoimentosFake: Depoimento[] = [
   // Depoimentos reais serão adicionados aqui conforme surgirem clientes
@@ -21,9 +24,9 @@ export function DepoimentosSection() {
   if (depoimentos.length === 0) {
     return (
       <div className="bg-dark-card border border-dark-border rounded-lg p-8 text-center">
-        <p className="text-gray-400 text-lg">⭐ Depoimentos em breve</p>
+        <p className="text-gray-400 text-lg">{t.sobre.depoimentos.em_breve}</p>
         <p className="text-gray-500 text-sm mt-2">
-          Acompanhe o que nossos clientes estão dizendo sobre nossos serviços.
+          {t.sobre.depoimentos.descricao}
         </p>
       </div>
     );
