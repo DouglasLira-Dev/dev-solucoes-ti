@@ -34,13 +34,13 @@
 
               <div className="flex flex-wrap gap-4 justify-center">
                 
-                  <a href="/servicos"
+                  <a href={`/${params.locale}/servicos`}
                   className="inline-block bg-primary text-dark px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
                 >
                   {t.home.cta_servicos}
                 </a>
                 
-                  <a href="/projetos"
+                  <a href={`/${params.locale}/projetos`}
                   className="inline-block border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors"
                 >
                   {t.home.cta_projetos}

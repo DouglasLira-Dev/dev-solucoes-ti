@@ -4,29 +4,34 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "@/components/i18n/TranslationsProvider";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Sobre", href: "/sobre" },
-  { name: "Serviços", href: "/servicos" },
-  { name: "Projetos", href: "/projetos" },
-  { name: "Ferramentas", href: "/ferramentas" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contato", href: "/contato" },
-];
 
 export function Header() {
+
   const pathname = usePathname();
+  const t = useTranslations();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   const currentLocale = pathname?.split("/")[1] || "pt";
 
+
+  const navigation = [
+  { name: t.nav.home, href: "/" },
+  { name: t.nav.sobre, href: "/sobre" },
+  { name: t.nav.servicos, href: "/servicos" },
+  { name: t.nav.projetos, href: "/projetos" },
+  { name: t.nav.ferramentas, href: "/ferramentas" },
+  { name: t.nav.blog, href: "/blog" },
+  { name: t.nav.contato, href: "/contato" },
+  ];
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleLang = () => setIsLangOpen(!isLangOpen);
 
   const switchLanguage = (locale: string) => {
-    const path = pathname?.replace(/^\/[a-z]{2}/, "") || "/";
+  const path = pathname?.replace(/^\/[a-z]{2}/, "") || "/";
     window.location.href = `/${locale}${path}`;
   };
 

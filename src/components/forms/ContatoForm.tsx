@@ -158,6 +158,7 @@ export function ContatoForm() {
           value={formData.mensagem}
           onChange={handleChange}
           disabled={isSubmitting}
+          maxLength={1000}
           className={`w-full bg-dark-surface border ${
             getFieldError("mensagem") ? "border-cyber-red" : "border-dark-border"
           } rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none transition-colors resize-none disabled:opacity-50`}
@@ -168,7 +169,7 @@ export function ContatoForm() {
           <p className="text-cyber-red text-sm mt-1">{getFieldError("mensagem")}</p>
         )}
         <p className="text-gray-500 text-xs mt-1">
-          Máximo de 1000 caracteres
+          {formData.mensagem.length}/1000 caracteres
         </p>
       </div>
 

@@ -13,6 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" className="dark">
+      <head> 
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var m=window.location.pathname.match(/^\\/(pt|en)(\\/|$)/);document.documentElement.lang=m?m[1]:'pt';})();`,
+          }}
+        />
+      </head>
       <body className="antialiased">
         {children}
       </body>
