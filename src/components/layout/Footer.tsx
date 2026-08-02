@@ -1,25 +1,10 @@
 import Link from "next/link";
 import { Github, Linkedin, Instagram, Facebook, Mail, Phone } from "lucide-react";
+import { getDictionary } from "@/lib/i18n";
 
 interface FooterProps {
   locale: string;
 }
-
-const quickLinks = [
-  { name: "Sobre", href: "/sobre" },
-  { name: "Serviços", href: "/servicos" },
-  { name: "Projetos", href: "/projetos" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contato", href: "/contato" },
-  { name: "Política de Privacidade", href: "/privacidade" },
-];
-
-const serviceLinks = [
-  { name: "Suporte Técnico", href: "/servicos/suporte-remoto" },
-  { name: "Redes e Periféricos", href: "/servicos/redes-perifericos" },
-  { name: "Cybersegurança", href: "/servicos/cyberseguranca" },
-  { name: "Desenvolvimento", href: "/servicos/desenvolvimento-web" },
-];
 
 const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com/DouglasLira-Dev" },
@@ -31,6 +16,24 @@ const socialLinks = [
 const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER || "5511999999999";
 
 export function Footer({ locale }: FooterProps) {
+  const t = getDictionary(locale);
+
+  const quickLinks = [
+    { name: t.nav.sobre, href: "/sobre" },
+    { name: t.nav.servicos, href: "/servicos" },
+    { name: t.nav.projetos, href: "/projetos" },
+    { name: t.nav.blog, href: "/blog" },
+    { name: t.nav.contato, href: "/contato" },
+    { name: t.privacidade.title, href: "/privacidade" },
+  ];
+
+  const serviceLinks = [
+    { name: t.footer.suporte_tecnico, href: "/servicos/suporte-remoto" },
+    { name: t.footer.redes, href: "/servicos/redes-perifericos" },
+    { name: t.footer.cyberseguranca, href: "/servicos/cyberseguranca" },
+    { name: t.footer.desenvolvimento, href: "/servicos/desenvolvimento-web" },
+  ];
+
   return (
     <footer className="bg-dark-card border-t border-dark-border">
       <div className="container mx-auto px-4 py-12">
@@ -38,13 +41,13 @@ export function Footer({ locale }: FooterProps) {
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold text-white mb-4">
-              <span className="text-primary">DEV</span> Soluções
+              <span className="text-primary">DEV</span> {t.footer.brand.replace('DEV ', '')}
             </h3>
             <p className="text-gray-400 text-sm">
-              Suporte Técnico, Desenvolvimento e Cybersegurança com excelência.
+              {t.footer.brand_desc}
             </p>
             <div className="mt-4 flex gap-3">
-              {socialLinks.map((social) => (
+               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
@@ -61,7 +64,7 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Links Rápidos</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.links_rapidos}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -78,7 +81,7 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Serviços</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.servicos}</h4>
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
@@ -95,7 +98,7 @@ export function Footer({ locale }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Contato</h4>
+            <h4 className="text-white font-semibold mb-4">{t.footer.contato}</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-primary" />
@@ -110,7 +113,7 @@ export function Footer({ locale }: FooterProps) {
                 </a>
               </li>
               <li className="text-gray-400 text-sm mt-2">
-                <span className="text-primary">🔒</span> Segurança em primeiro lugar
+                <span className="text-primary">🔒</span> {t.footer.seguranca_texto}
               </li>
             </ul>
           </div>
@@ -119,15 +122,15 @@ export function Footer({ locale }: FooterProps) {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-dark-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} DEV Soluções em TI. Todos os direitos reservados.
+            © {new Date().getFullYear()} DEV Soluções em TI. {t.footer.direitos}
           </p>
           <div className="flex gap-4 text-sm">
             <Link href={`/${locale}/privacidade`} className="text-gray-500 hover:text-primary transition-colors">
-              Política de Privacidade
+              {t.privacidade.title}
             </Link>
             <span className="text-gray-600">|</span>
             <Link href="/.well-known/security.txt" className="text-gray-500 hover:text-primary transition-colors">
-              🔒 security
+              {t.footer.seguranca}
             </Link>
           </div>
         </div>

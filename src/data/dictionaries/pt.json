@@ -56,7 +56,12 @@
       "limpar": "Limpar filtros",
       "encontrados": "serviço(s) encontrado(s)",
       "nenhum": "Nenhum serviço encontrado com os filtros selecionados."
-    },
+      },
+    "ver_detalhes": "Ver detalhes e preços",
+    "itens_incluidos": "Serviços incluídos nesta categoria",
+    "voltar_servicos": "Voltar para todos os serviços",
+    "por_que_escolher": "Por que escolher este serviço",
+    "valores_referencia": "Valores de referência — a confirmar em orçamento conforme o caso.",
     "modalidades": {
       "todas": "Todas",
       "remoto": "🌐 Remoto",
@@ -93,7 +98,8 @@
     "em_breve": "Em breve teremos conteúdo técnico aqui!",
     "ler_mais": "Ler mais",
     "voltar": "Voltar para o blog",
-    "publicado": "Publicado em"
+    "publicado": "Publicado em",
+    "min_leitura": "min de leitura"
   },
   "contato": {
     "title": "Entre em Contato",
@@ -212,7 +218,12 @@
     "servicos": "Serviços",
     "contato": "Contato",
     "direitos": "Todos os direitos reservados.",
-    "seguranca": "🔒 security.txt"
+    "seguranca": "🔒 security.txt",
+    "suporte_tecnico": "Suporte Técnico",
+    "redes": "Redes e Periféricos",
+    "cyberseguranca": "Cybersegurança",
+    "desenvolvimento": "Desenvolvimento",
+    "seguranca_texto": "Segurança em primeiro lugar"
   },
   "whatsapp": {
     "button": "Fale conosco"

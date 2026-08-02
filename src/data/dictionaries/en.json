@@ -57,6 +57,11 @@
       "encontrados": "service(s) found",
       "nenhum": "No services found with the selected filters."
     },
+    "ver_detalhes": "View details and pricing",
+    "itens_incluidos": "Services included in this category",
+    "voltar_servicos": "Back to all services",
+    "por_que_escolher": "Why choose this service",
+    "valores_referencia": "Reference prices — to be confirmed in a quote depending on the case.",
     "modalidades": {
       "todas": "All",
       "remoto": "🌐 Remote",
@@ -93,7 +98,8 @@
     "em_breve": "We'll have technical content here soon!",
     "ler_mais": "Read more",
     "voltar": "Back to blog",
-    "publicado": "Published on"
+    "publicado": "Published on",
+    "min_leitura": "min read"
   },
   "contato": {
     "title": "Get in Touch",
@@ -212,7 +218,12 @@
     "servicos": "Services",
     "contato": "Contact",
     "direitos": "All rights reserved.",
-    "seguranca": "🔒 security.txt"
+    "seguranca": "🔒 security.txt",
+    "suporte_tecnico": "Technical Support",
+    "redes": "Networks & Peripherals",
+    "cyberseguranca": "Cybersecurity",
+    "desenvolvimento": "Development",
+    "seguranca_texto": "Security first"
   },
   "whatsapp": {
     "button": "Talk to us"

@@ -1,17 +1,29 @@
 import Link from 'next/link';
 import { getAllPosts, getPostTags } from '@/lib/blog';
 import { generateMetadata as seoMetadata } from '@/lib/seo';
+import { getDictionary } from '@/lib/i18n';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 
-export const metadata = seoMetadata({
-  title: 'Blog',
-  description: 'Dicas, tutoriais e novidades sobre tecnologia, desenvolvimento e cybersegurança',
-  url: '/blog',
-});
+interface BlogPageProps {
+  params: {
+    locale: string;
+  };
+}
 
-export default function BlogPage() {
+export async function generateMetadata({ params }: BlogPageProps) {
+  const t = getDictionary(params.locale);
+  return seoMetadata({
+    title: t.blog.title,
+    description: t.blog.subtitle,
+    url: '/blog',
+  });
+}
+
+export default function BlogPage({ params }: BlogPageProps) {
+  const t = getDictionary(params.locale);
   const posts = getAllPosts();
   const tags = getPostTags();
+  const dateLocale = params.locale === 'pt' ? 'pt-BR' : 'en-US';
 
   const categoryColors = {
     desenvolvimento: 'text-primary bg-primary/10',
@@ -30,16 +42,15 @@ export default function BlogPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            Blog
+            {t.blog.title}
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Dicas, tutoriais e novidades do mundo da tecnologia
+            {t.blog.subtitle}
           </p>
 
-          {/* Tags */}
           {tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-12">
-              <span className="text-gray-500 text-sm mr-2">Tags:</span>
+              <span className="text-gray-500 text-sm mr-2">{t.blog.tags}:</span>
               {tags.map((tag) => (
                 <span
                   key={tag}
@@ -52,14 +63,13 @@ export default function BlogPage() {
             </div>
           )}
 
-          {/* Posts */}
           {posts.length === 0 ? (
             <div className="bg-dark-card border border-dark-border rounded-lg p-12 text-center">
               <p className="text-gray-400 text-lg">
-                📝 Nenhum post publicado ainda.
+                {t.blog.nenhum}
               </p>
               <p className="text-gray-500 text-sm mt-2">
-                Em breve teremos conteúdo técnico aqui!
+                {t.blog.em_breve}
               </p>
             </div>
           ) : (
@@ -75,7 +85,7 @@ export default function BlogPage() {
                     </span>
                     <span className="text-gray-500 text-sm flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
-                      {new Date(post.date).toLocaleDateString('pt-BR', {
+                      {new Date(post.date).toLocaleDateString(dateLocale, {
                         day: '2-digit',
                         month: 'short',
                         year: 'numeric',
@@ -83,12 +93,12 @@ export default function BlogPage() {
                     </span>
                     <span className="text-gray-500 text-sm flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      {post.readingTime} min
+                      {post.readingTime} {t.blog.min_leitura}
                     </span>
                   </div>
 
                   <h2 className="text-2xl font-bold text-white mb-2 hover:text-primary transition-colors">
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/${params.locale}/blog/${post.slug}`}>
                       {post.title}
                     </Link>
                   </h2>
@@ -114,10 +124,10 @@ export default function BlogPage() {
                       )}
                     </div>
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/${params.locale}/blog/${post.slug}`}
                       className="text-primary hover:text-primary-dark transition-colors flex items-center gap-1 text-sm font-medium"
                     >
-                      Ler mais
+                      {t.blog.ler_mais}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

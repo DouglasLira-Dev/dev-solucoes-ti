@@ -2,6 +2,7 @@
 
 import { MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useTranslations } from "@/components/i18n/TranslationsProvider";
 
 interface WhatsAppButtonProps {
   phoneNumber?: string;
@@ -12,6 +13,7 @@ export function WhatsAppButton({
   phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "" ,
   message = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE || "Olá! Gostaria de mais informações sobre os serviços da DEV Soluções em TI.",
 }: WhatsAppButtonProps) {
+  const t = useTranslations();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -45,7 +47,7 @@ export function WhatsAppButton({
     >
       <MessageCircle className="w-6 h-6" />
       <span className="absolute right-full mr-3 bg-dark-card text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-        Fale conosco
+        {t.whatsapp.button}
       </span>
     </button>
   );

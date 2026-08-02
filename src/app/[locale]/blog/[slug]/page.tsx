@@ -4,6 +4,7 @@ import { generateMetadata as seoMetadata } from '@/lib/seo';
 import MDXComponents from '@/components/mdx/MDXComponents';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Calendar, Clock, User, Tag, ArrowLeft } from 'lucide-react';
+import { getDictionary } from '@/lib/i18n';
 import Link from 'next/link';
 
 interface BlogPostPageProps {
@@ -36,6 +37,8 @@ export async function generateStaticParams() {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getPostBySlug(params.slug);
+  const t = getDictionary(params.locale);
+  const dateLocale = params.locale === 'pt' ? 'pt-BR' : 'en-US';
 
   if (!post) {
     notFound();
@@ -65,7 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Voltar para o blog
+          {t.blog.voltar}
         </Link>
 
         {/* Header do Post */}
@@ -77,7 +80,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span className="text-gray-500 text-sm">•</span>
             <span className="text-gray-500 text-sm flex items-center gap-1">
               <Calendar className="w-4 h-4" />
-              {new Date(post.date).toLocaleDateString('pt-BR', {
+              {new Date(post.date).toLocaleDateString(dateLocale, {
                 day: '2-digit',
                 month: 'long',
                 year: 'numeric',
@@ -85,7 +88,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
             <span className="text-gray-500 text-sm flex items-center gap-1">
               <Clock className="w-4 h-4" />
-              {post.readingTime} min de leitura
+              {post.readingTime} {t.blog.min_leitura}
             </span>
           </div>
 
@@ -130,10 +133,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Voltar para o blog
+              {t.blog.voltar}
             </Link>
             <div className="text-sm text-gray-500">
-              Publicado em {new Date(post.date).toLocaleDateString('pt-BR')}
+              {t.blog.publicado} {new Date(post.date).toLocaleDateString(dateLocale)}
             </div>
           </div>
         </footer>

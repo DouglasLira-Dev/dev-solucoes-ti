@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { useTranslations } from "@/components/i18n/TranslationsProvider";
 
 interface FormState {
   nome: string;
@@ -16,6 +17,7 @@ interface FieldError {
 }
 
 export function ContatoForm() {
+  const t = useTranslations();
   const [formData, setFormData] = useState<FormState>({
     nome: "",
     email: "",
@@ -34,7 +36,6 @@ export function ContatoForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Limpar erro do campo quando o usuário digita
     if (status.errors) {
       setStatus((prev) => ({
         ...prev,
@@ -62,21 +63,20 @@ export function ContatoForm() {
       if (response.ok && data.success) {
         setStatus({
           type: "success",
-          message: data.message || "Mensagem enviada com sucesso!",
+          message: data.message || t.contato.form.sucesso,
         });
-        // Limpar formulário
         setFormData({ nome: "", email: "", mensagem: "", honeypot: "" });
       } else {
         setStatus({
           type: "error",
-          message: data.message || "Erro ao enviar mensagem. Tente novamente.",
+          message: data.message || t.contato.form.erro,
           errors: data.errors || [],
         });
       }
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Erro de conexão. Verifique sua internet e tente novamente.",
+        message: t.contato.form.erro_conexao,
       });
     } finally {
       setIsSubmitting(false);
@@ -89,7 +89,6 @@ export function ContatoForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Honeypot (escondido) */}
       <input
         type="text"
         name="honeypot"
@@ -100,10 +99,9 @@ export function ContatoForm() {
         autoComplete="off"
       />
 
-      {/* Nome */}
       <div>
         <label htmlFor="nome" className="block text-gray-300 text-sm mb-2">
-          Nome <span className="text-primary">*</span>
+          {t.contato.form.nome} <span className="text-primary">*</span>
         </label>
         <input
           type="text"
@@ -115,7 +113,7 @@ export function ContatoForm() {
           className={`w-full bg-dark-surface border ${
             getFieldError("nome") ? "border-cyber-red" : "border-dark-border"
           } rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none transition-colors disabled:opacity-50`}
-          placeholder="Seu nome completo"
+          placeholder={t.contato.form.placeholder_nome}
           required
         />
         {getFieldError("nome") && (
@@ -123,10 +121,9 @@ export function ContatoForm() {
         )}
       </div>
 
-      {/* E-mail */}
       <div>
         <label htmlFor="email" className="block text-gray-300 text-sm mb-2">
-          E-mail <span className="text-primary">*</span>
+          {t.contato.form.email} <span className="text-primary">*</span>
         </label>
         <input
           type="email"
@@ -138,7 +135,7 @@ export function ContatoForm() {
           className={`w-full bg-dark-surface border ${
             getFieldError("email") ? "border-cyber-red" : "border-dark-border"
           } rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none transition-colors disabled:opacity-50`}
-          placeholder="seu@email.com"
+          placeholder={t.contato.form.placeholder_email}
           required
         />
         {getFieldError("email") && (
@@ -146,10 +143,9 @@ export function ContatoForm() {
         )}
       </div>
 
-      {/* Mensagem */}
       <div>
         <label htmlFor="mensagem" className="block text-gray-300 text-sm mb-2">
-          Mensagem <span className="text-primary">*</span>
+          {t.contato.form.mensagem} <span className="text-primary">*</span>
         </label>
         <textarea
           id="mensagem"
@@ -158,22 +154,21 @@ export function ContatoForm() {
           value={formData.mensagem}
           onChange={handleChange}
           disabled={isSubmitting}
-          maxLength={1000}
           className={`w-full bg-dark-surface border ${
             getFieldError("mensagem") ? "border-cyber-red" : "border-dark-border"
           } rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none transition-colors resize-none disabled:opacity-50`}
-          placeholder="Como podemos ajudar você?"
+          placeholder={t.contato.form.placeholder_mensagem}
+          maxLength={1000}
           required
         />
         {getFieldError("mensagem") && (
           <p className="text-cyber-red text-sm mt-1">{getFieldError("mensagem")}</p>
         )}
         <p className="text-gray-500 text-xs mt-1">
-          {formData.mensagem.length}/1000 caracteres
+          {formData.mensagem.length}/1000
         </p>
       </div>
 
-      {/* Status */}
       {status.type && (
         <div
           className={`p-4 rounded-lg flex items-start gap-3 ${
@@ -191,7 +186,6 @@ export function ContatoForm() {
         </div>
       )}
 
-      {/* Botão Enviar */}
       <button
         type="submit"
         disabled={isSubmitting}
@@ -200,18 +194,18 @@ export function ContatoForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin" />
-            Enviando...
+            {t.contato.form.enviando}
           </>
         ) : (
           <>
             <Send className="w-5 h-5" />
-            Enviar Mensagem
+            {t.contato.form.enviar}
           </>
         )}
       </button>
 
       <p className="text-gray-500 text-xs text-center">
-        🔒 Sua mensagem é segura. Não compartilhamos seus dados.
+        {t.contato.form.seguro}
       </p>
     </form>
   );

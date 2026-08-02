@@ -1,10 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Shield, X, Check, AlertCircle } from "lucide-react";
+import { useParams } from "next/navigation";
+import { Shield, Check } from "lucide-react";
 import { getCookieConsent, setCookieConsent } from "@/lib/cookie-consent";
+import { useTranslations } from "@/components/i18n/TranslationsProvider";
 
 export function CookieBanner() {
+  const t = useTranslations();
+  const params = useParams();
+  const locale = (params?.locale as string) || "pt";
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -37,26 +42,24 @@ export function CookieBanner() {
             </div>
             <div className="text-sm text-gray-300">
               <h3 className="text-white font-semibold mb-1">
-                🍪 Nós usamos cookies
+                {t.cookies_banner.title}
               </h3>
               <p className="text-gray-400 max-w-2xl">
-                Utilizamos cookies para melhorar sua experiência, analisar tráfego 
-                e personalizar conteúdo. Ao continuar, você concorda com nossa 
-                Política de Privacidade.
+                {t.cookies_banner.text}
               </p>
               <div className="flex gap-4 mt-2 text-xs">
                 <a
-                  href="/privacidade"
+                  href={`/${locale}/privacidade`}
                   className="text-primary hover:text-primary-dark transition-colors"
                 >
-                  Política de Privacidade
+                  {t.cookies_banner.politica}
                 </a>
                 <span className="text-gray-600">|</span>
                 <a
-                  href="/cookies"
+                  href={`/${locale}/cookies`}
                   className="text-primary hover:text-primary-dark transition-colors"
                 >
-                  Política de Cookies
+                  {t.cookies_banner.cookies}
                 </a>
               </div>
             </div>
@@ -67,14 +70,14 @@ export function CookieBanner() {
               onClick={rejectCookies}
               className="flex-1 md:flex-none px-4 py-2 text-sm text-gray-400 hover:text-white border border-dark-border rounded-lg hover:border-gray-600 transition-colors"
             >
-              Recusar
+              {t.cookies_banner.recusar}
             </button>
             <button
               onClick={acceptCookies}
               className="flex-1 md:flex-none px-6 py-2 text-sm bg-primary text-dark font-semibold rounded-lg hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
             >
               <Check className="w-4 h-4" />
-              Aceitar todos
+              {t.cookies_banner.aceitar}
             </button>
           </div>
         </div>

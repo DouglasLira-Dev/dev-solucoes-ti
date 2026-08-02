@@ -1,12 +1,30 @@
-import { getGitHubRepos, categorizeRepos } from "@/lib/github";
+import { getGitHubRepos, categorizeRepos, getFeaturedRepos } from "@/lib/github";
+import { generateMetadata as seoMetadata } from "@/lib/seo";
+import { getDictionary } from "@/lib/i18n";
 import { Github, Star, GitFork, ExternalLink } from "lucide-react";
 
 export const revalidate = 300; // Revalidar a cada 5 minutos
 
-export default async function ProjetosPage() {
-  // Buscar dados do GitHub no servidor
+interface ProjetosPageProps {
+  params: { locale: string };
+}
+
+export async function generateMetadata({ params }: ProjetosPageProps) {
+  const t = getDictionary(params.locale);
+  return seoMetadata({
+    title: t.projetos.title,
+    description: t.projetos.subtitle,
+    url: "/projetos",
+  });
+}
+
+export default async function ProjetosPage({ params }: ProjetosPageProps) {
+  const t = getDictionary(params.locale);
+  const dateLocale = params.locale === 'pt' ? 'pt-BR' : 'en-US';
+
   const repos = await getGitHubRepos();
   const categorized = categorizeRepos(repos);
+  const featured = getFeaturedRepos(repos, 4);
 
   const renderRepoCard = (repo: any) => (
     <div
@@ -67,7 +85,7 @@ export default async function ProjetosPage() {
           {repo.forks_count}
         </span>
         <span className="text-xs">
-          {new Date(repo.pushed_at).toLocaleDateString("pt-BR")}
+          {new Date(repo.pushed_at).toLocaleDateString(dateLocale)}
         </span>
       </div>
     </div>
@@ -78,9 +96,9 @@ export default async function ProjetosPage() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-primary mb-2">Projetos</h1>
+            <h1 className="text-4xl font-bold text-primary mb-2">{t.projetos.title}</h1>
             <p className="text-gray-300">
-              Conheça meus projetos no GitHub
+              {t.projetos.subtitle}
             </p>
           </div>
           <a
@@ -90,18 +108,18 @@ export default async function ProjetosPage() {
             className="flex items-center gap-2 bg-dark-card border border-dark-border px-4 py-2 rounded-lg hover:border-primary transition-colors"
           >
             <Github className="w-5 h-5" />
-            <span>Ver todos</span>
+            <span>{t.projetos.ver_todos}</span>
           </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categorized.featured?.length > 0 ? (
-            categorized.featured.map(renderRepoCard)
+          {featured?.length > 0 ? (
+            featured.map(renderRepoCard)
           ) : (
             <div className="col-span-2 text-center py-12 text-gray-400">
               <Github className="w-12 h-12 mx-auto mb-4 opacity-50" />
-              <p>Nenhum projeto encontrado no GitHub</p>
-              <p className="text-sm">Adicione projetos com topics como "cybersecurity" ou "java"</p>
+              <p>{t.projetos.nenhum}</p>
+              <p className="text-sm">{t.projetos.dica}</p>
             </div>
           )}
         </div>
@@ -109,7 +127,7 @@ export default async function ProjetosPage() {
         {categorized.cybersecurity.length > 0 && (
           <div className="mt-12">
             <h2 className="text-2xl font-semibold text-cyber-green mb-6">
-              🔒 Cybersegurança
+              {t.projetos.cyberseguranca}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {categorized.cybersecurity.slice(0, 4).map(renderRepoCard)}
@@ -120,7 +138,7 @@ export default async function ProjetosPage() {
         {categorized.desenvolvimento.length > 0 && (
           <div className="mt-12">
             <h2 className="text-2xl font-semibold text-primary mb-6">
-              💻 Desenvolvimento
+              {t.projetos.desenvolvimento}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {categorized.desenvolvimento.slice(0, 4).map(renderRepoCard)}
@@ -130,10 +148,10 @@ export default async function ProjetosPage() {
 
         <div className="mt-12 bg-dark-card border border-dark-border rounded-lg p-6 text-center">
           <p className="text-gray-400 text-sm">
-            ⚠️ Projetos de cybersegurança são realizados em ambientes controlados e autorizados
+            {t.projetos.aviso}
           </p>
           <p className="text-gray-500 text-xs mt-2">
-            Dados atualizados automaticamente via API do GitHub
+            {t.projetos.atualizacao}
           </p>
         </div>
       </div>

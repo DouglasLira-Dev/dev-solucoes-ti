@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Servico, Categoria } from '@/lib/data';
+import { useTranslations } from '@/components/i18n/TranslationsProvider';
 
 interface ServicosClientProps {
   servicos: Servico[];
@@ -11,10 +12,10 @@ interface ServicosClientProps {
 }
 
 export function ServicosClient({ servicos, categorias, locale }: ServicosClientProps) {
+  const t = useTranslations();
   const [categoriaFiltro, setCategoriaFiltro] = useState<string>('todos');
   const [modalidadeFiltro, setModalidadeFiltro] = useState<string>('todas');
 
-  // Filtrar serviços
   let servicosFiltrados = servicos;
 
   if (categoriaFiltro !== 'todos') {
@@ -30,16 +31,16 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
   }
 
   const modalidades = [
-    { id: 'todas', label: 'Todas' },
-    { id: 'remoto', label: '🌐 Remoto' },
-    { id: 'presencial', label: '📍 Presencial' },
-    { id: 'híbrido', label: '🔄 Híbrido' },
+    { id: 'todas', label: t.servicos.modalidades.todas },
+    { id: 'remoto', label: t.servicos.modalidades.remoto },
+    { id: 'presencial', label: t.servicos.modalidades.presencial },
+    { id: 'híbrido', label: t.servicos.modalidades.hibrido },
   ];
 
-  const modalidadeLabels = {
-    remoto: '🌐 Remoto',
-    presencial: '📍 Presencial',
-    'híbrido': '🔄 Híbrido',
+  const modalidadeLabels: Record<string, string> = {
+    remoto: t.servicos.modalidades.remoto,
+    presencial: t.servicos.modalidades.presencial,
+    'híbrido': t.servicos.modalidades.hibrido,
   };
 
   return (
@@ -48,13 +49,13 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
       <div className="bg-dark-card border border-dark-border rounded-lg p-6 mb-8">
         <div className="flex flex-wrap gap-4">
           <div>
-            <label className="block text-sm text-gray-400 mb-2">Categoria</label>
+            <label className="block text-sm text-gray-400 mb-2">{t.servicos.filtros.categoria}</label>
             <select
               value={categoriaFiltro}
               onChange={(e) => setCategoriaFiltro(e.target.value)}
               className="bg-dark-surface border border-dark-border rounded-lg px-4 py-2 text-white focus:border-primary focus:outline-none"
             >
-              <option value="todos">Todas as categorias</option>
+              <option value="todos">{t.servicos.filtros.todos}</option>
               {categorias.map((cat) => (
                 <option key={cat.id} value={cat.id}>
                   {cat.icon} {cat.nome}
@@ -64,7 +65,7 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
           </div>
 
           <div>
-            <label className="block text-sm text-gray-400 mb-2">Modalidade</label>
+            <label className="block text-sm text-gray-400 mb-2">{t.servicos.filtros.modalidade}</label>
             <select
               value={modalidadeFiltro}
               onChange={(e) => setModalidadeFiltro(e.target.value)}
@@ -86,20 +87,20 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
               }}
               className="text-gray-400 hover:text-primary transition-colors text-sm"
             >
-              Limpar filtros ✕
+              {t.servicos.filtros.limpar} ✕
             </button>
           </div>
         </div>
 
         <div className="mt-4 text-sm text-gray-500">
-          {servicosFiltrados.length} serviço(s) encontrado(s)
+          {servicosFiltrados.length} {t.servicos.filtros.encontrados}
         </div>
       </div>
 
       {/* Grid de Serviços */}
       {servicosFiltrados.length === 0 ? (
         <div className="bg-dark-card border border-dark-border rounded-lg p-12 text-center">
-          <p className="text-gray-400">Nenhum serviço encontrado com os filtros selecionados.</p>
+          <p className="text-gray-400">{t.servicos.filtros.nenhum}</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,7 +120,7 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
                 </span>
                 {servico.destaque && (
                   <span className="text-xs bg-cyber-green/10 text-cyber-green px-2 py-1 rounded-full">
-                    ★ Destaque
+                    {t.servicos.destaque}
                   </span>
                 )}
               </div>
@@ -148,11 +149,11 @@ export function ServicosClient({ servicos, categorias, locale }: ServicosClientP
                 href={`/${locale}/servicos/${servico.id}`}
                 className="block w-full text-center border border-primary text-primary font-semibold py-2 rounded-lg hover:bg-primary/10 transition-colors mb-2"
               >
-                Ver detalhes e preços
+                {t.servicos.ver_detalhes}
               </Link>
 
               <a
-                href="/contato"
+                href={`/${locale}/contato`}
                 className="block w-full text-center bg-primary text-dark font-semibold py-2 rounded-lg hover:bg-primary-dark transition-colors"
               >
                 {servico.cta}
