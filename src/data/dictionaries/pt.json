@@ -30,20 +30,20 @@
     }
   },
   "sobre": {
-    "title": "Sobre Nós",
-    "description": "A DEV Soluções em TI é uma empresa dedicada a oferecer soluções tecnológicas completas com foco em segurança, qualidade e inovação.",
+    "title": "Sobre Mim",
+    "description": "Sou estudante de Análise e Desenvolvimento de Sistemas e ofereço serviços de suporte técnico, desenvolvimento e cybersegurança com foco em qualidade e confiança.",
     "historia": {
-      "title": "📚 Nossa História",
-      "text": "Fundada com o propósito de unir excelência técnica e compromisso com a segurança, a DEV Soluções em TI nasceu da paixão por tecnologia e da visão de um futuro digital mais seguro."
+      "title": "📚 Minha Trajetória",
+      "text": "Estou no 3º período do curso de Análise e Desenvolvimento de Sistemas, onde venho construindo uma base sólida em desenvolvimento de software. Ao longo do curso, trabalhei com Java, Spring Boot, SQL e Python em projetos práticos, e sou autodidata em cybersegurança — estudando por conta própria através de plataformas de hacking ético e conteúdo especializado. A DEV Soluções em TI nasceu da vontade de unir esse conhecimento técnico a um atendimento próximo e honesto, tanto pra quem precisa de suporte no dia a dia quanto pra quem busca soluções mais robustas de desenvolvimento."
     },
     "missao": {
-      "title": "🎯 Nossa Missão",
-      "text": "Oferecer serviços de TI com qualidade, ética e transparência, sempre priorizando a segurança e a satisfação dos nossos clientes."
+      "title": "🎯 Minha Missão",
+      "text": "Oferecer serviços de TI com qualidade, ética e transparência, sempre priorizando a segurança e a satisfação de quem confia no meu trabalho — seja um atendimento simples ou um projeto mais complexo."
     },
     "depoimentos": {
       "title": "⭐ Depoimentos",
       "em_breve": "Em breve, depoimentos de clientes reais!",
-      "descricao": "Acompanhe o que nossos clientes estão dizendo sobre nossos serviços."
+      "descricao": "Acompanhe o que meus clientes estão dizendo sobre os serviços."
     }
   },
   "servicos": {
@@ -68,7 +68,18 @@
       "presencial": "📍 Presencial",
       "hibrido": "🔄 Híbrido"
     },
-    "destaque": "★ Destaque"
+    "destaque": "★ Destaque",
+    "dispositivos": {
+      "title": "Dispositivos que atendemos",
+      "subtitle": "Suporte técnico para os principais tipos de equipamento",
+      "lista": [
+        "Computador (Desktop)",
+        "Notebook",
+        "Tablet / iPad",
+        "Smartphone Android",
+        "iPhone (iOS)"
+      ]
+    }
   },
   "projetos": {
     "title": "Projetos",

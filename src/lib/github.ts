@@ -28,6 +28,21 @@ interface GitHubUser {
 const GITHUB_API_BASE = "https://api.github.com";
 const GITHUB_USERNAME = "DouglasLira-Dev";
 
+// Lista repositórios que você deseja destacar no portfólio
+const FEATURED_REPO_NAMES = [
+  "stock-manager-api",
+  "School-Attendance-System",
+  "sistema-bilhetagem-vt"
+];
+
+function filterCuratedRepos(repos: GitHubRepo[]): GitHubRepo[] {
+  if (FEATURED_REPO_NAMES.length === 0) {
+    return repos; // nenhuma curadoria definida ainda -> retorna todos os repositórios
+  }
+  const allowList = FEATURED_REPO_NAMES.map((name) => name.toLowerCase());
+  return repos.filter((repo) => allowList.includes(repo.name.toLowerCase()));
+}
+
 // Cache para evitar muitas requisições
 let cache: {
   repos: GitHubRepo[] | null;
@@ -91,6 +106,7 @@ export async function getGitHubRepos(): Promise<GitHubRepo[]> {
   );
 
   if (repos) {
+    const curated = filterCuratedRepos(repos);
     cache.repos = repos;
     cache.timestamp = Date.now();
     return repos;

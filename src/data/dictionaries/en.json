@@ -30,20 +30,20 @@
     }
   },
   "sobre": {
-    "title": "About Us",
-    "description": "DEV Solutions in IT is a company dedicated to offering complete technological solutions with a focus on security, quality and innovation.",
+    "title": "About Me",
+    "description": "I'm a Computer Science student offering technical support, development, and cybersecurity services with a focus on quality and trust.",
     "historia": {
-      "title": "📚 Our History",
-      "text": "Founded with the purpose of uniting technical excellence and commitment to security, DEV Solutions in IT was born from a passion for technology and the vision of a safer digital future."
+      "title": "📚 My Journey",
+      "text": "I'm currently in my 3rd term of a Systems Analysis and Development degree, where I've been building a solid foundation in software development. Throughout the course, I've worked with Java, Spring Boot, SQL, and Python on hands-on projects, and I'm self-taught in cybersecurity — studying independently through ethical hacking platforms and specialized content. DEV Soluções em TI was born from the desire to combine that technical knowledge with close, honest service — whether it's everyday support or a more complex development project."
     },
     "missao": {
-      "title": "🎯 Our Mission",
-      "text": "To offer IT services with quality, ethics and transparency, always prioritizing security and customer satisfaction."
+      "title": "🎯 My Mission",
+      "text": "To provide IT services with quality, ethics, and transparency, always prioritizing the security and satisfaction of those who trust my work — whether it's simple support or a more complex project."
     },
     "depoimentos": {
       "title": "⭐ Testimonials",
       "em_breve": "Real client testimonials coming soon!",
-      "descricao": "Follow what our clients are saying about our services."
+      "descricao": "Follow what my clients are saying about the services."
     }
   },
   "servicos": {
@@ -68,7 +68,18 @@
       "presencial": "📍 On-site",
       "hibrido": "🔄 Hybrid"
     },
-    "destaque": "★ Featured"
+    "destaque": "★ Featured",
+    "dispositivos": {
+      "title": "Devices we support",
+      "subtitle": "Technical support for all major device types",
+      "lista": [
+        "Desktop computer",
+        "Notebook / Laptop",
+        "Tablet / iPad",
+        "Android smartphone",
+        "iPhone (iOS)"
+      ]
+    }
   },
   "projetos": {
     "title": "Projects",

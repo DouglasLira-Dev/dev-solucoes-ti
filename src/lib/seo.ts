@@ -17,7 +17,7 @@ export function generateMetadata({
   title,
   description = defaultDescription,
   keywords = [],
-  image = "/images/og-image.jpg",
+  image = "/images/og-image.png",
   url = "",
   noIndex = false,
 }: SEOProps): Metadata {

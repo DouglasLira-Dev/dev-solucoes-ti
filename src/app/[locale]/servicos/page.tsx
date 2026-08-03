@@ -38,6 +38,25 @@ export default function ServicosPage({ params }: ServicosPageProps) {
           categorias={categorias}
           locale={params.locale}
         />
+        {/* Dispositivos atendidos */}
+        <section className="mt-16 bg-dark-card border border-dark-border rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-primary mb-2">
+            {t.servicos.dispositivos.title}
+          </h2>
+          <p className="text-gray-400 mb-6">
+            {t.servicos.dispositivos.subtitle}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {t.servicos.dispositivos.lista.map((item: string) => (
+              <span
+                key={item}
+                className="px-4 py-2 bg-dark-surface border border-dark-border rounded-full text-sm text-gray-200"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

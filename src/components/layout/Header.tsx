@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import { useTranslations } from "@/components/i18n/TranslationsProvider";
-
+import Image from "next/image";
 
 export function Header() {
 
@@ -41,9 +41,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-dark">
-              DEV
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="DEV Soluções em TI"
+              width={40}
+              height={40}
+              className="rounded-lg"
+              priority
+            />
             <span className="text-white font-semibold hidden sm:block">
               <span className="text-primary">DEV</span> Soluções
             </span>

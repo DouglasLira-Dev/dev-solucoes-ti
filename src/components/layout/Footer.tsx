@@ -8,7 +8,7 @@ interface FooterProps {
 
 const socialLinks = [
   { name: "GitHub", icon: Github, href: "https://github.com/DouglasLira-Dev" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/dev-douglas-lira" },
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/dev_solucao_ti" },
   { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61591904985195" },
 ];

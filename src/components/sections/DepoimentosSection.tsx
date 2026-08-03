@@ -12,13 +12,12 @@ interface Depoimento {
   avatar?: string;
 }
 
-const t = useTranslations();
-
 const depoimentosFake: Depoimento[] = [
   // Depoimentos reais serão adicionados aqui conforme surgirem clientes
 ];
 
 export function DepoimentosSection() {
+  const t = useTranslations();
   const [depoimentos] = useState<Depoimento[]>(depoimentosFake);
 
   if (depoimentos.length === 0) {

@@ -1,0 +1,89 @@
+---
+title: "5 Boas Práticas ao Criar sua Primeira API REST com Spring Boot"
+description: "Dicas práticas para estruturar APIs REST em Spring Boot de um jeito organizado, seguro e fácil de manter — direto de quem está construindo projetos reais com a stack."
+date: "2026-08-03"
+author: "DEV Soluções em TI"
+category: "desenvolvimento"
+tags: ["java", "spring-boot", "api-rest", "boas-praticas", "backend"]
+---
+
+# 5 Boas Práticas ao Criar sua Primeira API REST com Spring Boot
+
+Spring Boot é uma das formas mais rápidas de sair do zero a uma API REST funcionando em Java. Mas rodar rápido não é a mesma coisa que rodar bem. Depois de construir alguns projetos com a stack, separei 5 práticas que fazem diferença real desde o primeiro commit.
+
+## 1. Separe as camadas desde o início
+
+Mesmo em projetos pequenos, vale manter a separação clássica:
+
+controller/ → recebe a requisição HTTP
+service/ → regra de negócio
+repository/ → acesso a dados
+dto/ → objetos de entrada e saída da API
+
+O erro mais comum de quem está começando é colocar lógica de negócio direto no `Controller`. Isso funciona, mas dificulta testar e reaproveitar código depois.
+
+## 2. Nunca exponha suas entidades JPA direto na API
+
+É tentador retornar a entidade do banco direto na resposta:
+
+```java
+@GetMapping("/usuarios/{id}")
+public Usuario buscar(@PathVariable Long id) {
+    return usuarioRepository.findById(id).orElseThrow();
+}
+```
+
+O problema: qualquer campo novo na entidade (senha, dados internos) acaba vazando na API sem querer. O ideal é sempre passar por um DTO:
+
+```java
+public record UsuarioResponseDTO(Long id, String nome, String email) {}
+```
+
+## 3. Trate os erros de forma centralizada
+
+Em vez de espalhar `try/catch` pelos controllers, use um `@ControllerAdvice`:
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<String> handleNotFound(EntityNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+}
+```
+
+Isso deixa a API consistente — todo erro segue o mesmo formato de resposta, independente de qual endpoint falhou.
+
+## 4. Valide a entrada antes de qualquer coisa
+
+O Spring Boot já vem com Bean Validation pronto pra uso — não precisa reinventar:
+
+```java
+public record CriarUsuarioDTO(
+    @NotBlank String nome,
+    @Email String email,
+    @Size(min = 8) String senha
+) {}
+```
+
+E no controller, basta anotar com `@Valid`. Poucas linhas evitam boa parte dos bugs de dado inválido chegando no banco.
+
+## 5. Configure o `application.properties` por ambiente
+
+Um erro clássico é deixar credenciais de banco direto no `application.properties` e subir isso pro Git. O ideal é usar variáveis de ambiente:
+
+```properties
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASSWORD}
+```
+
+Assim, cada ambiente (local, produção) injeta seus próprios valores sem expor nada no repositório.
+
+## Conclusão
+
+Nenhuma dessas práticas é complexa isoladamente — o ganho vem de aplicar as cinco juntas desde o início do projeto. É bem mais fácil manter esse padrão desde o primeiro commit do que refatorar depois que o projeto já cresceu.
+
+🚀 Se você está começando com Spring Boot agora, comece simples: uma entidade, um DTO, um endpoint — e vá aplicando essas práticas conforme o projeto cresce.
